@@ -1,0 +1,48 @@
+function funny_faces( imgA, ptsA )
+% FUNNY_FACES This function produces goofy faces from the input image
+%   'imgA' and the corresponding reference points ptsA.
+%
+% Jason L. Pacheco
+% 9/5/10
+%
+
+  [H,W,D] = size( imgA );
+  
+  % pin-head big-chin
+  indx_squeeze = [15,16,10,1,2,18];
+  pts_squeeze = ptsA( indx_squeeze, : );
+  indx_extrude = [5,6,8,14,13,7,17];
+
+  % pin-cushion face
+  vec_diff = repmat( mean( ptsA ), [size(ptsA,1), 1] ) - ptsA;
+  pts_new = round( ptsA + 0.7 * vec_diff );
+  img = facemorph( imgA, ptsA, zeros( size( imgA ) ), pts_new, 1, 0 );
+  figure;
+  imshow( img );
+  
+  % barrel distortion face  
+  pts_new = round( ptsA -  vec_diff );
+  pts_new( pts_new < 1 ) = 1;
+  I = find( pts_new(:,1) > W );
+  J = find( pts_new(:,2) > H );
+  pts_new(I,1) = W;
+  pts_new(J,2) = H;
+  img = facemorph( imgA, ptsA, zeros( size( imgA ) ), pts_new, 1, 0 );
+  figure;
+  imshow( img );
+    
+  % devil guy
+  pts_new = ptsA;
+  pts_new(10,2) = 140;
+  pts_new(15,2) = 10;
+  pts_new(16,2) = 10;
+  img = facemorph( imgA, ptsA, zeros( size( imgA ) ), pts_new, 1, 0 );
+  figure;
+  imshow( img );
+  
+  
+  
+  
+
+return;
+

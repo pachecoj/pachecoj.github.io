@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Principles of Machine Learning</title>
+    <meta name="author" content="Jason Pacheco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="/theme/html5.js"></script>
+	<![endif]-->
+    <link href="./css/ipython.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.1.3/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/pygments.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <div class="container">
+
+      <!-- Navigation -->
+      <nav class="nav nav-pills justify-content-end">
+	<a class="nav-item nav-link active" href="#">Home</a>
+	<a class="nav-item nav-link" href="https://d2l.arizona.edu/d2l/home/1355965" target="_blank" rel="noopener noreferrer">D2L (580)</a>	
+	<a class="nav-item nav-link" href="https://d2l.arizona.edu/d2l/home/1355962" target="_blank" rel="noopener noreferrer">D2L (480)</a>
+	<a class="nav-item nav-link" href="https://piazza.com/arizona/fall2023/csc480580/home" target="_blank" rel="noopener noreferrer">Piazza</a>
+	<a class="nav-item nav-link" href="syllabus.pdf">Syllabus</a>
+	<a class="nav-item nav-link" href="#schedule">Schedule</a>
+	<!-- <a class="nav-item nav-link" href="resources.html">Resources</a> -->
+      </nav>
+      <hr>
+      
+      <!-- Header -->
+      <div class="page-header">
+	<h1>
+	  <a href="#"><b>Principles of Machine learning</b></a><br/>
+	  <small class="text-muted">CSC 480-580 Fall 2023 | Tue./Thurs. 5:00pm-6:15pm | Gould-Simpson Rm. 906</small>
+	</h1>
+      </div>
+      <!-- /Header -->
+      
+      <!-- Main -->
+      <!-- <div class="row justify-content-center"> -->
+      <!-- 	<div class="col-md-5" align="center"> -->
+      <!-- 	  <img src="img/pose_teaser.jpg"> -->
+      <!-- 	</div> -->
+      <!-- 	<div class="col-md-5" align="center"> -->
+      <!-- 	  <img src="img/protein_teaser.jpg"> -->
+      <!-- 	</div>	 -->
+      <!-- </div> -->
+      
+      <div class="row justify-content-center">	
+	<div class="col-md-9">
+	  <h2>Description of Course</h2>
+	  <p>
+	    Students will learn why machine learning is a
+	    fundamentally different way of writing computer programs,
+	    and why this approach is often a uniquely attractive way
+	    of solving practical problems. Machine learning is all
+	    about automatic ways for computers to find patterns in
+	    datasets; students will learn both advantages and unique
+	    risks that this approach offers. They will learn the
+	    fundamental computational methods, algorithms, and
+	    perspectives which underlie current machine learning
+	    methods, and how to derive and implement many of them.
+	    Students will learn the fundamentals of unsupervised and
+	    supervised machine learning methods, the computational and
+	    quality trade-offs between different methods, and how to
+	    adapt existing methods to fit their own research needs.
+	  </p>
+
+	  <!--
+	  <div class="alert alert-primary" role="alert">
+	    This course is open to CS students exclusively during the
+	    enrollment period.  Any <b>non-CS students</b> wishing to
+	    enroll in this course
+	    should <a href="mailto:pachecoj@cs.arizona.edu">email
+	    me</a> and CC <a href="cskotnicki@cs.arizona.edu">Chelsea
+	    Skotnicki</a>.  Space is limited so I will prioritize
+	    enrollment in the order of emails I receive.
+	  </div>
+	  -->
+
+	  <h2>Textbook</h2>
+	  <p>
+	    We will use the following textbook, which is freely available online:<br/>
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    <a href="http://ciml.info/" target="_blank" rel="noopener noreferrer">
+	      Daume&#769;, Hal. "A Course in Machine Learning." 2017.
+	    </a><br/>
+	    The full textbook can also
+	    be <a href="http://ciml.info/dl/v0_99/ciml-v0_99-all.pdf"
+	    target="_blank" rel="noopener noreferrer">downloaded as a
+	    PDF</a> if you prefer that format.  All reading assignments will be posted in the schedule below.
+	  </p>
+
+	  <h2>Instructor and Contact Information:</h2>
+	  <p>
+	    <b>Instructor:</b> Jason Pacheco, GS 724, Email: <a href="mailto:pachecoj@cs.arizona.edu">pachecoj@cs.arizona.edu</a></br>
+	    <b>Jason's Office Hours:</b> Fridays @ 3-5:00pm (15:00-17:00) - via Zoom</br>
+	    <b>Yinan's Office Hours:</b> Fridays @ 10:30am - 12:30pm (1030 - 1230) - via Zoom<br/>
+	    <b>D2L 580:</b> <a href="https://d2l.arizona.edu/d2l/home/1355965" target="_blank" rel="noopener noreferrer">https://d2l.arizona.edu/d2l/home/1355965</a></br>
+	    <b>D2L 480:</b> <a href="https://d2l.arizona.edu/d2l/home/1355962" target="_blank" rel="noopener noreferrer">https://d2l.arizona.edu/d2l/home/1355962</a></br>
+	    <b>Piazza:</b> <a href="https://piazza.com/arizona/fall2023/csc480580/home" target="_blank" rel="noopener noreferrer">https://piazza.com/arizona/fall2023/csc480580/home</a></br>
+	    <b>Instructor Homepage:</b> <a href="http://www.pachecoj.com">http://www.pachecoj.com</a></br>
+	  </p>
+	</div>
+      </div>
+      <!-- /Main -->
+
+      <!-- Header -->
+      <div class="page-header">
+	<h1>
+	  <a name="schedule"><b>Schedule</b></a>
+      </div>
+      <!-- /Header -->
+
+
+      <!-- Main -->
+      <div class="row justify-content-center">	
+	<div class="col">
+	  <div class="table-responsive-md">
+	    <table class="table table-striped">
+	      <thead>
+		<tr>
+		  <th scope="col">Date</th>
+		  <th scope="col">Topic</th>
+		  <th scope="col">Readings</th>
+		  <th scope="col">Assignment</th>
+		</tr>
+	      </thead>
+	      <tbody>
+
+		<!-- Lecture -->
+		<tr>
+		  <td>8/22</td>
+		  <td>
+		    Introduction + Course Overview
+		    &nbsp;&nbsp;<a href="lectures/23_lec00_intro.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    <a href="https://www.w3schools.com/python/numpy/default.asp" target="_blank" rel="noopener noreferrer">W3Schools : Numpy Tutorial</a> <br/>
+		    <a href="https://www.youtube.com/watch?v=DcfYgePyedM" target="_blank" rel="noopener noreferrer">YouTube : Numpy Tutorial : Mr. P Solver</a> 
+		  </td>
+		  <td>
+		    HW0: Calibration<br/> (Due: 8/29 @ 12pm noon)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>8/24</td>
+		  <td>
+		    Basics - Decision Trees, Learning Algorithms
+		    &nbsp;&nbsp;<a href="lectures/23_lec01_decisiontrees.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 1 - Decision Trees
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>8/29</td>
+		  <td>
+		    Limits - Optimal Bayes Rate Classifier, Overfitting / Underfitting
+		    &nbsp;&nbsp;<a href="lectures/23_lec02_limits.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 2 - Limits of Learning
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>8/31</td>
+		  <td>
+		    Geometry - Nearest Neighbor Classifiers, K-Means Clustering
+		    &nbsp;&nbsp;<a href="lectures/23_lec03_knn.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 3 - Geometry and Nearest Neighbors
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/5</td>
+		  <td>
+		    The Perceptron Algorithm
+		    &nbsp;&nbsp;<a href="lectures/23_lec04_perceptron.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>		    
+		  </td>
+		  <td>
+		    CH 4 - The Perceptron
+		    &nbsp;&nbsp;<a href="http://clulab.org/gentlenlp/slides/nnintro-ch2-perceptron.pptx"target="_blank" rel="noopener noreferrer">(Prof. Surdeanu slides)</a>
+		  </td>
+		  <td>
+		    HW1 (Due: 9/15)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>9/7</td>
+		  <td>		    
+		    Practical Issues - Performance measures,
+		    overfitting / underfitting, Cross-Validation
+		    &nbsp;&nbsp;<a href="lectures/23_lec05_practicalissues.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>		    
+		  </td>
+		  <td>
+		    CH 5 - Practical Issues
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->		
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/12</td>
+		  <td>
+		    Practical Issues (continued) - Prediction
+		    Confidence, Statistical Tests, Bootstrap
+		    &nbsp;&nbsp;<a href="lectures/23_lec05_practicalissues.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>		    
+		  </td>
+		  <td>
+		    CH 5 - Practical Issues
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/14</td>
+		  <td>
+		    Bias-Variance Decomposition and Friends
+		    &nbsp;&nbsp;<a href="lectures/23_lec05_practicalissues.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/19</td>
+		  <td>
+		    Linear Models: Linear Regression
+		    &nbsp;&nbsp;<a href="lectures/23_lec06_linearmodels.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 7 - Linear Models
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/21</td>
+		  <td>
+		    Linear Models: Logistic Regression
+		    &nbsp;&nbsp;<a href="lectures/23_lec06_linearmodels.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>		    
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/26</td>
+		  <td>
+		    Nonlinear Models: Basis Functions, Kernels, SVM
+		    &nbsp;&nbsp;<a href="lectures/23_lec07_nonlinearmodels.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		    <!-- HW2 (Due: 10/6) -->
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/28</td>
+		  <td>
+		    Probability, Naive Bayes, Graphical Models
+		    &nbsp;&nbsp;<a href="lectures/23_lec08_pgms.pdf"
+ target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 9 - Probabilistic Modeling
+		  </td>
+		  <td>
+		    <b>HW2 (Due: 10/8)</b>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/3</td>
+		  <td>
+		    Probability, Naive Bayes, Graphical Models (continued)
+		    &nbsp;&nbsp;<a href="lectures/23_lec08_pgms.pdf"
+		    target="_blank" rel="noopener noreferrer">(slides)</a>		    
+		  </td>
+		  <td>
+		    
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/5</td>
+		  <td>
+		    Probability, Naive Bayes, Graphical Models (continued)
+		    &nbsp;&nbsp;<a href="lectures/23_lec08_pgms.pdf"
+		    target="_blank" rel="noopener noreferrer">(slides)</a>		    
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/10</td>
+		  <td>
+		    Midterm Review
+		    &nbsp;&nbsp;<a href="lectures/23_lec09_midterm.pdf"
+		    target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>		    
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/12</td>
+		  <td>
+		    Midterm Exam
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		    Midterm Exam
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/17</td>
+		  <td>
+		    Bias and Fairness
+		    &nbsp;&nbsp;<a href="lectures/23_lec10_bias.pdf"
+                    target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH8 - Bias and Fairness
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/19</td>
+		  <td>
+		    Unsupervised Learning
+		    &nbsp;&nbsp;<a href="lectures/23_lec11_unsupervised.pdf"
+		    target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH15 - Unsupervised Learning
+		  </td>
+		  <td>
+		    <!-- HW3 (Due 11/10) -->
+		  </td>
+		  
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/24</td>
+		  <td>		    
+		    Unsupervised Learning (Cont'd)
+		    &nbsp;&nbsp;<a href="lectures/23_lec11_unsupervised.pdf"
+                    target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		    <!-- Due: Project Proposals<br/> -->
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/26</td>
+		  <td>
+		    Gaussian Mixture Models and Expectation Maximization
+		    &nbsp;&nbsp;<a href="lectures/23_lec12_learning.pdf"
+                    target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/31</td>
+		  <td>
+		    Neural Networks and Backpropagation
+		  </td>
+		  <td>
+		    CH 10 - Neural Networks
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/2</td>
+		  <td>
+		    Neural Networks and Backpropagation (continued)
+		  </td>
+		  <td>
+
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/7</td>
+		  <td>
+		    Ensemble Methods
+		  </td>
+		  <td>
+		    CH 13 - Ensemble Methods<br/>
+                    <i>Note: We skipped CH 12!</i>
+		  </td>
+		  <td>
+		    <!-- HW4 (Due: 11/26) -->
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/9</td>
+		  <td>
+		    Efficient Learning
+		  </td>
+		  <td>
+		    CH 14 - Efficient Learning
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>11/14</td>
+		  <td>
+		    Unsupervised Learning (continued)
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->		
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/16</td>
+		  <td>
+		    Learning Theory
+		  </td>
+		  <td>		    
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/21</td>
+		  <td>
+		    Learning Theory (Cont'd)
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/23</td>
+		  <td>
+		    <b>Thanksgiving Break - No Class</b>
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/28</td>
+		  <td>
+		    Reserved for schedule adjustments
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/30</td>
+		  <td>
+		    Reserved for schedule adjustments
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>12/5</td>
+		  <td>
+		    Course Wrap-up
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		    Final Project Due
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+				
+	      </tbody>
+	    </table>
+	  </div>
+	</div>
+      </div>
+      
+
+</div>
+<!-- /container -->
+
+<div class="container">
+  <hr>
+  <div class="row justify-content-end">
+    <div class="col-md" align="right">      
+      &copy; Jason Pacheco, 2020
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Probabilistic Graphical Models</title>
+    <meta name="author" content="Jason Pacheco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="/theme/html5.js"></script>
+	<![endif]-->
+    <link href="./css/ipython.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.1.3/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/pygments.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <div class="container">
+
+      <!-- Navigation -->
+      <nav class="nav nav-pills justify-content-end">
+	<a class="nav-item nav-link active" href="#">Home</a>
+	<a class="nav-item nav-link" href="https://d2l.arizona.edu/d2l/home/937505">D2L</a>
+	<a class="nav-item nav-link" href="csc535_fall20_syllabus.pdf">Syllabus</a>
+	<a class="nav-item nav-link" href="#schedule">Schedule</a>
+	<!-- <a class="nav-item nav-link" href="resources.html">Resources</a> -->
+      </nav>
+      <hr>
+      
+      <!-- Header -->
+      <div class="page-header">
+	<h1>
+	  <a href="#"><b>Probabilistic Graphical Models</b></a><br/>
+	  <small class="text-muted">CSC 535 | Fall 2020 | MW 11am-12:15pm | Syncronous Online</small>
+	</h1>
+      </div>
+      <!-- /Header -->
+      
+      <!-- Main -->
+      <div class="row justify-content-center">
+	<div class="col-md-5" align="center">
+	  <img src="img/pose_teaser.jpg">
+	</div>
+	<div class="col-md-5" align="center">
+	  <img src="img/protein_teaser.jpg">
+	</div>	
+      </div>
+      
+      <div class="row justify-content-center">	
+	<div class="col-md-9">
+	  <h2>Description of Course</h2>
+	  <p>Probabilistic graphical modeling and inference is a
+	  powerful modern approach to representing the combined
+	  statistics of data and models, reasoning about the world in
+	  the face of uncertainty, and learning about it from data. It
+	  cleanly separates the notions of representation, reasoning,
+	  and learning. It provides a principled framework for
+	  combining multiple sources of information, such as prior
+	  knowledge about the world, with evidence about a particular
+	  case in observed data. This course will provide a solid
+	  introduction to the methodology and associated techniques,
+	  and show how they are applied in diverse domains ranging
+	  from computer vision to computational biology to
+	  computational neuroscience.</p>
+
+	  <div class="alert alert-primary" role="alert">
+	    This course is open to CS students exclusively during the
+	    enrollment period.  Any <b>non-CS students</b> wishing to
+	    enroll in this course
+	    should <a href="mailto:pachecoj@cs.arizona.edu">email
+	    me</a> and CC <a href="cskotnicki@cs.arizona.edu">Chelsea
+	    Skotnicki</a>.  Space is limited so I will prioritize
+	    enrollment in the order of emails I receive.
+	  </div>
+
+	  <h2>Textbooks</h2>
+	  <p>
+	    All reading material will be made available through
+	    presentation slides or the course webpage.  Students will
+	    find the following optional textbooks useful throughout
+	    this course:
+	      <div class="col-md-11">	    
+		Bishop, C. "Pattern Recognition and Machine Learning."
+		Springer, 2006
+		<a href="https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf">(
+		PDF )</a><br>
+		
+		Murphy,	K. "Machine Learning: A Probabilistic
+		Perspective." MIT press, 2012
+		<a href="https://arizona-primo.hosted.exlibrisgroup.com/permalink/f/6ljalh/01UA_ALMA51543591360003843">(
+		UA Library )</a> 
+	      </div><br>
+	    Note that Bishop's book is freely available to anyone.
+	    Murphy's book is available online through the UA library
+	    with NetID login.
+	  </p>
+
+	  <h2>Instructor and Contact Information:</h2>
+	  <p>
+	    <b>Instructor:</b> Jason Pacheco, GS 724, Email: <a href="mailto:pachecoj@cs.arizona.edu">pachecoj@cs.arizona.edu</a></br>
+	    <b>Office Hours:</b> Tuesday @ 3-4:30pm (Tucson time)</br>
+	    <b>Optional Office Hours:</b>Thursday @ 9-10:30am (Message professor on Piazza at least the day before)</br>
+	    <b>D2L:</b> <a href="https://d2l.arizona.edu/d2l/home/937505">https://d2l.arizona.edu/d2l/home/937505</a></br>
+	    <b>Piazza:</b> <a href="https://piazza.com/arizona/fall2020/csc535">https://piazza.com/arizona/fall2020/csc535</a></br>
+	    <b>Instructor Homepage:</b> <a href="http://www.pachecoj.com">http://www.pachecoj.com</a></br>
+	  </p>
+	</div>
+      </div>
+      <!-- /Main -->
+
+      <!-- Header -->
+      <div class="page-header">
+	<h1>
+	  <a name="schedule"><b>Schedule</b></a>
+      </div>
+      <!-- /Header -->
+
+
+      <!-- Main -->
+      <div class="row justify-content-center">	
+	<div class="col">
+	  <div class="table-responsive-md">
+	    <table class="table table-striped">
+	      <thead>
+		<tr>
+		  <th scope="col">Date</th>
+		  <th scope="col">Topic</th>
+		  <th scope="col">Readings</th>
+		  <th scope="col">Assignment</th>
+		</tr>
+	      </thead>
+	      <tbody>
+
+		<!-- Lecture -->
+		<tr>
+		  <td>8/24</td>
+		  <td>
+		    Introduction + Course Overview &nbsp;&nbsp;
+		    <a href="lectures/intro.pdf">(slides)</a>
+		  </td>
+		  <td>
+		    <a href="doc/matlab_primer.pdf">Matlab Primer</a>
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>8/26</td>
+		  <td>
+		    Probability Primer (Part I) <br/>
+		    <a href="lectures/probability.pdf">(slides: 1-24)</a>
+		  </td>
+		  <td>
+		    Murphy: Secs. 2.1 and 2.2
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>8/31</td>
+		  <td>
+		    Probability Primer (Part II)<br/>
+		    <a href="lectures/probability.pdf">(slides: 25-42)</a>		    
+		  </td>
+		  <td>
+		    Murphy: Secs. 2.3 - 2.5<br/>
+		    Bishop: Secs. 2.1 - 2.3.2
+		  </td>
+		  <td>
+		    <a href="hws/hw1.pdf">HW1</a>&nbsp;(Due: 9/9)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/2</td>
+		  <td>
+		    Probability Primer (Part III) <br/>
+		    <a href="lectures/probability.pdf">(slides: 43-end)</a><br/>
+		    Bayesian Probability and statistics (Part I)<br/>
+		    <a href="lectures/bayes.pdf">(slides)</a>
+		  </td>
+		  <td>
+		    Murphy: Secs. 3.1-3.2<br/>
+		    Bishop: Sec. 1.2 
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>9/7</td>
+		  <td>
+		    <b>Labor Day - No Class</b>
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->		
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/9</td>
+		  <td>
+		    Bayesian Probability and Statistics (Part II)<br/>
+		    <a href="lectures/bayes.pdf">(slides)</a>
+		  </td>
+		  <td>
+		    Murphy: Secs. 3.3-3.5
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/14</td>
+		  <td>
+		    Probabilistic Graphical Models (Part I: Directed)<br/>
+		    <a href="lectures/pgms.pdf">(slides: 1-49)</a>
+		  </td>
+		  <td>
+		    Murphy: Secs. 10.1-10.2<br/>
+		    Bishop: Secs. 8.1-8.2
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/16</td>
+		  <td>
+		    Probabilistic Graphical Models (Part II: Undirected)<br/>
+		    <a href="lectures/pgms.pdf">(slides: 50-end)</a>
+		  </td>
+		  <td>
+		    Murphy: Secs. 19.1-19.4<br/>
+		    Bishop: Sec. 8.3
+		  </td>
+		  <td>
+		    <a href="hws/hw2.pdf">HW2</a> (Due: 9/30)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/21</td>
+		  <td>
+		    Message Passing Inference (Part I: Variable Elimination)<br/>
+		    <a href="lectures/msgpass.pdf">(slides: 1-44)</a>
+		  </td>
+		  <td>
+		    Murphy: Sec. 20.3<br/>
+		    Bishop: Sec. 8.4.1		    
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/23</td>
+		  <td>
+		    Message Passing Inference (Part II: Sum-Product Belief Propagation (BP))<br/>
+		    <a href="lectures/msgpass.pdf">(slides: 46-89)</a>
+		  </td>
+		  <td>
+		    Murphy: Secs. 20.1-20.2<br/>
+		    Bishop: Secs. 8.4.1-8.4.4
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/28</td>
+		  <td>
+		    Message Passing Inference (Part II: Sum-Product BP Cont'd)<br/>
+		    <a href="lectures/msgpass.pdf">(slides: 46-89)</a>
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>9/30</td>
+		  <td>
+		    Message Passing Inference (Part III: Max-Product / Max-Sum BP)<br/>
+		    <a href="lectures/msgpass.pdf">(slides: 90-109)</a>
+		  </td>
+		  <td>
+		    Bishop: Sec. 8.4.5
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/5</td>
+		  <td>
+		    Message Passing Inference (Part IV: Junction Tree Algorithm)<br/>
+		    <a href="lectures/msgpass.pdf">(slides: 109-131)</a>
+		  </td>
+		  <td>
+		    Murphy: Sec. 20.4
+		  </td>
+		  <td>
+		    <a href="hws/hw3/hw3.pdf">HW3</a> (Due: 10/19)</br>
+		    Handout Code: <a href="hws/hw3/factorHandout.zip">Factor Graph</a>,
+		    <a href="hws/hw3/ldpcHandout.zip"> LDPC</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/7</td>
+		  <td>
+		    Message Passing Inference (Part V: Loopy Belief Propagation)<br/>
+		    <a href="lectures/msgpass.pdf">(slides: 131-end)</a>
+		  </td>
+		  <td>
+		    Murphy: Sec. 22.2
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/12</td>
+		  <td>
+		    Parameter Learning (Part I: MLE, MAP)<br/>
+		    <a href="lectures/learning.pdf">(slides: 1-28)</a>		    
+		  </td>
+		  <td>
+		    Murphy: Ch 7<br/>
+		    Bishop: Ch 3
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/14</td>
+		  <td>
+		    Parameter Learning (Part II: Expectation Maximization)<br/>
+		    <a href="lectures/learning.pdf">(slides: 30-)</a>		    		    
+		  </td>
+		  <td>
+		    Murphy: Ch 11<br/>
+		    Bishop: Ch 9
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/19</td>
+		  <td>
+		    Parameter Learning (Part II: EM Cont’d)<br/>
+		    <a href="lectures/learning.pdf">(slides: 30-)</a>		    		    
+		  </td>
+		  <td>
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/21</td>
+		  <td>
+		    Dynamical Systems (Part I: Sequence Models)<br/>
+		    <a href="lectures/dynamicalsys.pdf">(slides: 1-54)</a>
+		  </td>
+		  <td>
+		    Murphy: Ch 17<br/>
+		    Bishop: Ch 13
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/26</td>
+		  <td>
+		    Midterm Review<br/>
+		    <a href="lectures/midterm.pdf">(slides)</a>
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		    <b>Midterm Exam</b>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>10/28</td>
+		  <td>
+		    Dynamical Systems (Part II: Kalman Filter)<br/>
+  		    <a href="lectures/dynamicalsys.pdf">(slides: 55-72)</a>
+		  </td>
+		  <td>
+		    Murphy: Ch 18<br/>
+		    Bishop: Sec. 13.3
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/2</td>
+		  <td>
+		    Dynamical Systems (Part II: Nonlinear & Switching Dynamical Systems)<br/>
+		    <a href="lectures/dynamicalsys.pdf">(slides: 73-)</a>
+		  </td>
+		  <td>
+		    Murphy: Sec. 18.6 (Switching State-Space) <!--, Sec. 23.5 (Particle Filter)--> <br/>
+		    <!-- Bishop: Sec. 13.3.4 (Particle Filter) -->
+		    Bishop: Sec. 13.3
+		  </td>
+		  <td>
+		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/4</td>
+		  <td>
+		    Monte Carlo Methods (Part I: Monte Carlo Inference)<br/>
+		    <a href="lectures/montecarlo.pdf">(slides: 1-31)</a>
+		  </td>
+		  <td>
+		    Murphy: Sec. 23.1-23.4<br/>
+		    Bishop: Sec. 11.1
+		  </td>
+		  <td>
+		    <a href="hws/hw4/hw4.pdf">HW4</a> (Due: 11/16)<br/>
+		    Handout Code: <a href="hws/hw4/handoutLDS.zip">LDS</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/9</td>
+		  <td>
+		    Monte Carlo Methods (Part II: Sequential Monte Carlo)<br/>
+		    <a href="lectures/montecarlo.pdf">(slides: 32-59)</a>
+		  </td>
+		  <td>
+		    Murphy: Sec. 23.5
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>11/11</td>
+		  <td>
+		    <b>Veterans Day - No Class<b/>
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->		
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/16</td>
+		  <td>
+		    Monte Carlo Methods (Part III: Markov Chain Monte Carlo)<br/>
+		    (<a href="lectures/mcmc.pdf">MCMC slides</a>)
+		    (<a href="lectures/montecarlo.pdf">Monte Carlo Slides</a>)		    		    
+		  </td>
+		  <td>
+		    Murphy: Sec. 24.1-24.3<br/>
+		    Bishop: Sec. 11.2-11.3
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/18</td>
+		  <td>
+		    Monte Carlo Methods (Part III: MCMC Cont'd)<br/>
+		    (<a href="lectures/mcmc.pdf">MCMC slides</a>)
+		    (<a href="lectures/montecarlo.pdf">Monte Carlo Slides</a>)		    
+		  </td>
+		  <td>
+		    Murphy: Sec. 24.1-24.3<br/>
+		    Bishop: Sec. 11.2-11.3
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/23</td>
+		  <td>
+		    Monte Carlo Methods (Part III: MCMC Cont'd)<br/>
+		    (<a href="lectures/mcmc.pdf">MCMC slides</a>)
+		    (<a href="lectures/montecarlo.pdf">Monte Carlo Slides</a>)
+		  </td>
+		  <td>
+		    Murphy: Sec. 24.1-24.3<br/>
+		    Bishop: Sec. 11.2-11.3
+		  </td>
+		  <td>
+		    <a href="hws/hw5/hw5.pdf">HW5</a> (Due: 12/7)<br/>
+		    Handout Code: <a href="hws/hw5/handoutLDS.zip">LDS</a>, <a href="hws/hw5/handoutSB.zip">Stochastic Block Model</a>, <a href="hws/hw5/valid_RandIndex.m">valid_RandIndex.m</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/25</td>
+		  <td>
+		    Exponential Families <br/>
+		    ( <a href="lectures/expfam.pdf">slides</a> )
+		  </td>
+		  <td>
+		    Murphy: Sec. 9.1-9.2<br/>
+		    Bishop: Sec. 2.4
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>11/30</td>
+		  <td>
+		    Variational Inference (Part I: Variational Methods)<br/>
+		    ( <a href="lectures/variational.pdf">slides</a> )
+		  </td>
+		  <td>
+		    Murphy: Sec. 21.1-21.2
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>12/2</td>
+		  <td>
+		    Variational Inference (Part II: Mean Field Variational)<br/>
+		    ( <a href="lectures/variational.pdf">slides</a> )
+		  </td>
+		  <td>
+		    Murphy: Sec. 21.3
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>12/7</td>
+		  <td>
+		    Variational Inference (Part II: Stochastic Variational)<br/>
+		    ( <a href="lectures/variational.pdf">slides</a> )
+		  </td>
+		  <td>		    
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>12/9</td>
+		  <td>
+		    Last Class: Wrapup
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>12/14</td>
+		  <td>
+		    <b>Final Exam</b>
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->		
+		
+	      </tbody>
+	    </table>
+	  </div>
+	</div>
+      </div>
+      
+
+</div>
+<!-- /container -->
+
+<div class="container">
+  <hr>
+  <div class="row justify-content-end">
+    <div class="col-md" align="right">      
+      &copy; Jason Pacheco, 2020
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

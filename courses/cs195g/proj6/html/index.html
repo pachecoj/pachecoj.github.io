@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Project 6: Automated Panorama Stitching (Writeup)</title>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="flowplayer-3.1.4.min.js"></script>
+</head>
+
+<style type=text/css media=all>
+#primarycontent {
+    margin-left: auto;  
+    width: expression(document.body.clientWidth > 995? "995px": "auto" );
+    margin-right: auto;
+    text-align: left;
+    max-width: 995px 
+}
+</style>
+
+<body>
+
+<div id=primarycontent>
+<h1 align="center">Project 6: Automated Panorama Stitching (Writeup)</h1>
+<h2 align="center">Jason Pacheco (pachecoj)</h2>
+<h3 align="center">April 17, 2010</h3><br/>
+
+<h2 align="center">View <a
+href="../code/">Code</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View <a href="../data/">Data</a></h2>
+
+
+<h2>Algorithm Description</h2>
+
+<p>
+  The implementation is a variant of that proposed in <a
+  href="http://www.cs.brown.edu/courses/csci1950-g/asgn/proj6/resources/ImageMatching.pdf">Brown
+  et al.</a>.  We run a Harris detector on each of the 
+  images to derive a set of interest points.  For each point we
+  perform adaptive non-maximal suppression as outlined in the paper to
+  reduce the number of interest points to roughly 200.
+</p>
+
+<h3>Features and RANSAC</h3>
+
+<p>
+  At each interest point we compute discriminative features which
+  consist of a color histogram in an 8x8 grid around the interest
+  point and on all three color channels.  These features are obviously
+  not invariant to rotation or scale, but they seem to work well enough.
+</p>
+
+<p>
+  We compute the pairwise distance between each feature in each of the
+  images.  We compute a set of candidate matches by using Lowe's
+  method e1-nn / e2-nn.  These candidates are provided to the RANSAC
+  algorithm.  We run RANSAC iterations until at least 10 "outlier"
+  features are matched within a distance of 0.5 pixels.  The resulting
+  homography is applied to image 1 and projected into the space of
+  image 2.
+</p>
+
+<h2>Graduate Credit: Automatic Panorama Detection</h2>
+
+<p>
+  For graduate credit I implemented a version of automatic panorama
+  detection.  The algorithm is a simple greedy approach.  The
+  algorithmic flow is as follows:
+  <ol>
+    <li>Compute feature points using the Harris detector for each
+  image</li>
+    <li>Compute homographies and scores for each pair of images using
+  RANSAC.  The  result is a symmetric matrix of scores for each
+  homography.</li> 
+    <li>Choose an ordering of images using a greedy vertex cover
+  algorithm.  We treet this as a fully connected graph with edge
+  weights represented by scores and solve for a vertex cover on this
+  graph which maximizes the sum of edge weights.</li>
+    <li>Apply homographies so that all images are in the coordinate
+  system of the final image in the Vertex cover path and construct
+  panorama in this coordinate system.</li>
+  </ol>
+  
+</p>
+
+
+
+
+<h2>Results</h2>
+
+<table style="float: left;">
+  <tr>
+    <td align="center"><a href="images/panorama001.jpg"><img
+  src="images/panorama001.jpg" width="300" /></a></td>
+    <td align="center"><a href="images/panorama002.jpg"><img
+  src="images/panorama002.jpg" width="300" /></a></td> 
+    <td align="center"><a href="images/panorama003.jpg"><img
+  src="images/panorama003.jpg" width="300" /></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="images/panorama005.jpg"><img
+  src="images/panorama005.jpg" width="300" /></a></td> 
+    <td align="center"><a href="images/panorama008.jpg"><img
+  src="images/panorama008.jpg" width="300" /></a><br/>
+  <small>I found the images for this panorama <a href="http://cvlab.epfl.ch/~brown/autostitch/autostitch.html">here.</a></small></td>
+    <td align="center"><a href="images/panorama009.jpg"><img
+  src="images/panorama009.jpg" width="300" /></a></td>   
+  </tr>
+  <tr>
+    <td align="center"><a href="images/panorama010.jpg"><img
+  src="images/panorama010.jpg" width="300" /></a></td>
+    <td align="center"><a href="images/panorama013.jpg"><img
+  src="images/panorama013.jpg" width="300" /></a></td>   
+    <td align="center"><a href="images/panorama012.jpg"><img
+  src="images/panorama012.jpg" width="300" /></a></td>
+  </tr>
+</table>
+
+</div>
+</body>
+</html>
+
+

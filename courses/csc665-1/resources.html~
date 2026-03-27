@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Advanced Topics in Probabilistic Graphical Models</title>
+    <meta name="author" content="Jason Pacheco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="/theme/html5.js"></script>
+	<![endif]-->
+    <link href="./css/ipython.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.1.3/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/pygments.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <div class="container">
+
+      <!-- Navigation -->
+      <nav class="nav nav-pills justify-content-end">
+	<a class="nav-item nav-link" href="index.html">Home</a>
+	<a class="nav-item nav-link" href="http://d2l.arizona.edu/d2l/home/814136">D2L</a>
+	<a class="nav-item nav-link" href="syllabus.html">Syllabus</a>
+	<a class="nav-item nav-link" href="schedule.html">Schedule</a>
+	<a class="nav-item nav-link active" href="#">Resources</a>
+      </nav>
+      <hr>
+      
+      <!-- Header -->
+      <div class="page-header">
+	<h1>
+	  <a href="#"><b>Advanced Topics in Probabilistic Graphical Models</b></a><br/>
+	  <small class="text-muted">CSC 655-1 | Fall 2019 | MW 11am-12:15pm GS 942</small>
+	</h1>
+      </div>
+      <!-- /Header -->
+      
+      <!-- Main -->
+      <div class="row justify-content-center">	
+	<div class="col-md-9">
+	  <h2>Term Project Proposal Instructions</h2>
+	  <p>
+	    The proposal serves two useful purposes beyond: First, it
+	    allows me to assess viability of the project and to
+	    provide useful suggestions.  Second, it serves as a
+	    checkpoint that the student has adequately thought through
+	    the problem formulation and approach.  In short, if it is
+	    difficult to describe a project on paper then, it will be
+	    difficult to execute the project.
+	  </p>
+
+	  <h4>Details</h4>
+	  <p>
+	    Proposals will be written in
+	    the <a href="https://neurips.cc/Conferences/2019/PaperInformation/StyleFiles">NeurIPs
+	    format</a>.  They should be relatively brief (at least 4
+	    pages, but no more than 8).  Despite being brief, they
+	    should provide adequate detail for me to assess whether it
+	    is (1) a good idea (2) well-scoped and likely to be
+	    successful in the time available.
+	  </p>
+
+	  <p>
+	    With the above instructions in mind, the student is free
+	    to choose content of the proposals.  At a minimum, all
+	    proposals should include the following (not necessarily in
+	    this order):
+	    <ol>
+	      <li>Introduction</li>
+	      <li>Problem statement</li>
+	      <li>Background</li>
+	      <li>Proposed approach</li>
+	      <li>Related work</li>
+	    </ol>
+	    For projects related to your primary research projects,
+	    you may consider including figures of preliminary work.
+	  </p>
+
+	</div>
+      </div>
+      <!-- /Main -->
+
+</div>
+<!-- /container -->
+
+<div class="container">
+  <hr>
+  <div class="row justify-content-end">
+    <div class="col-md" align="right">      
+      &copy; Jason Pacheco, 2019
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

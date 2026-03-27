@@ -1,0 +1,98 @@
+function [ out ] = poisson( source, mask )
+% POISSON Solve poisson blending equation as a linear system of
+%   constraints Ax=b.
+%
+  [M,N] = size(mask(:,:,1));
+%   V = compute_diffs(source, mask);
+  out = zeros( size( source ) );
+  
+  %
+  % BUILD CONSTRAINT MATRIX A
+  %
+%   K = find( mask(:,:,1) );
+%   [I,J] = ind2sub( [M,N], K );
+%   I_a = [K, K, K, K, K];
+%   I_a = I_a';
+%   I_a = reshape(I_a,numel(I_a),1);
+%   J_a = I_a; % zeros(numel(I_a),1); 
+%   S = ones(numel(I_a),1);
+%   
+%   % constraints for elements in Omega
+%   indx = 0;
+%   for k = 1:numel(K)
+%     i = I(k);
+%     j = J(k);
+%     Np = 0;
+% 
+%     % upper
+%     indx = indx+1;
+%     if i>1
+%       i_upper = sub2ind( [M,N], i-1, j );
+%       J_a(indx) = i_upper; 
+%       S(indx) = -1;
+%       Np = Np+1;
+%     end
+% 
+%     % left
+%     indx = indx+1;
+%     if j>1
+%       i_left = sub2ind( [M,N], i,j-1 );
+%       J_a(indx) = i_left; 
+%       S(indx) = -1;   
+%       Np = Np+1;
+%     end
+% 
+%     % lower
+%     indx = indx+1;
+%     if i<M
+%       i_lower = sub2ind( [M,N], i+1, j );
+%       J_a(indx) = i_lower; 
+%       S(indx) = -1;       
+%       Np = Np+1;
+%     end
+% 
+%     % right
+%     indx = indx+1;
+%     if j<N
+%       i_right = sub2ind( [M,N], i,j+1 );
+%       J_a(indx) = i_right; 
+%       S(indx) = -1;
+%       Np = Np + 1;
+%     end
+%     
+%     % diagonal
+%     indx = indx+1;
+%     J_a(indx) = K(k);
+%     S(indx) = Np;
+%     
+%   end   
+  E = edges4connected(M,N);
+  K = find( mask );
+  for i=1:numel(K)
+    K_i = find( E(:,1) == K(i) );
+    
+  end
+  K = find( ~mask );
+  I = [ E(:,1); E(:,1); K ];
+  J = [ E(:,2); E(:,1); K ];
+  S = [ -ones(length(E(:,1))); 4*ones(length(E(:,1)),1); ones(numel(K), 1) ];
+  A = sparse(I,J,S,M*N,M*N);
+  
+  % solve each channel independently
+  for d=size(source,3)
+        
+    % constraints for elements on boundary
+    b = zeros(M*N,1); % reshape( V(:,:,d), numel(V(:,:,d)), 1 );   
+    K = find( ~mask );
+    source_chan = source(:,:,d);
+    b(K) = source_chan(K);
+        
+    % solve system
+    x = A\b;
+%     out(:,:,d) = reshape(x,M,N) .* mask(:,:,d) + target(:,:,d) .*
+%     ~mask(:,:,d);
+    out(:,:,d) = reshape(x,M,N);
+    
+  end  
+  
+end

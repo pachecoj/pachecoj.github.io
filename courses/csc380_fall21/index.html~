@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Principles of Data Science</title>
+    <meta name="author" content="Jason Pacheco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="/theme/html5.js"></script>
+	<![endif]-->
+    <link href="./css/ipython.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.1.3/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/pygments.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <div class="container">
+
+      <!-- Navigation -->
+      <nav class="nav nav-pills justify-content-end">
+	<a class="nav-item nav-link active" href="#">Home</a>
+	<a class="nav-item nav-link" href="https://d2l.arizona.edu/d2l/home/1072117" target="_blank" rel="noopener noreferrer">D2L</a>
+	<a class="nav-item nav-link" href="https://piazza.com/arizona/fall2021/csc380" target="_blank" rel="noopener noreferrer">Piazza</a>	
+	<a class="nav-item nav-link" href="CSC380_FALL2021_Syllabus.pdf" target="_blank" rel="noopener noreferrer">Syllabus</a>
+	<a class="nav-item nav-link" href="#schedule">Schedule</a>
+	<!-- <a class="nav-item nav-link" href="resources.html">Resources</a> -->
+      </nav>
+      <hr>
+      
+      <!-- Header -->
+      <div class="page-header">
+	<h1>
+	  <a href="#"><b>Probabilistic Graphical Models</b></a><br/>
+	  <small class="text-muted">CSC 380 | Fall 2021 | TuTh 5:00-6:15pm | Modern Languages Rm 311</small>
+	</h1>
+      </div>
+      <!-- /Header -->
+      
+      <!-- Main -->
+      <!-- <div class="row justify-content-center"> -->
+      <!-- 	<div class="col-md-5" align="center"> -->
+      <!-- 	  <img src="img/pose_teaser.jpg"> -->
+      <!-- 	</div> -->
+      <!-- 	<div class="col-md-5" align="center"> -->
+      <!-- 	  <img src="img/protein_teaser.jpg"> -->
+      <!-- 	</div>	 -->
+      <!-- </div> -->
+      
+      <div class="row justify-content-center">	
+	<div class="col-md-9">
+	  <center>
+	    <img src="img/teaser.png" width="450" align="center"><br/>
+	    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<small>[ Image Source: <a href="doc/what_is_data_science.pdf" target="_blank" rel="noopener noreferrer">Robinson, E. and Nolis, J.</a> ]</small>
+	  </center><br/>
+	  <h2>Description of Course</h2>
+	  <p>
+	    This course introduces students to the principles and
+	    tools of data science. This course will provide a
+	    foundation for properly collecting and analyzing data to
+	    draw insights and to answer data-driven questions. The
+	    course has three main components: applied probability and
+	    statistics, data analysis and visualization, and machine
+	    learning.  In the first component students will be
+	    introduced to the fundamentals of applied probability and
+	    statistics, learn how to interpret randomness, and how to
+	    assess predictive uncertainty. Students will then learn
+	    how to handle, clean, process, and visualize data of
+	    varying types using Python. Finally, the students will be
+	    introduced to the basics of machine learning to build
+	    predictive models. Students will further learn how to
+	    assess model validity and how to interpret the quality of
+	    model predictions.
+	  </p>
+
+	  <!-- <div class="alert alert-primary" role="alert"> -->
+	  <!--   This course is open to CS students exclusively during the -->
+	  <!--   enrollment period.  Any <b>non-CS students</b> wishing to -->
+	  <!--   enroll in this course -->
+	  <!--   should <a href="mailto:pachecoj@cs.arizona.edu">email -->
+	  <!--   me</a> and CC <a href="cskotnicki@cs.arizona.edu">Chelsea -->
+	  <!--   Skotnicki</a>.  Space is limited so I will prioritize -->
+	  <!--   enrollment in the order of emails I receive. -->
+	  <!-- </div> -->
+
+	  <h3>Primary Resources</h3>
+	  All reading material will be made available through
+	    presentation slides or the course webpage.  Students will
+	    find the following optional textbooks useful throughout
+	    this course: <br/><br/>
+	  <ul class="list-group list-group-flush">
+	    <li class="list-group-item">
+	      <b><a href="https://link.springer.com/book/10.1007/978-0-387-21736-9" target="_blank" rel="noopener noreferrer">WL</a> :</b> Wasserman, L. "All of Statistics: A Concise Course in Statistical Inference." Springer, 2004 
+	    </li>
+
+	    <li class="list-group-item">
+	      <b><a href="https://arizona-primo.hosted.exlibrisgroup.com/permalink/f/6ljalh/01UA_ALMA51543591360003843" target="_blank" rel="noopener noreferrer">MK</a> :</b> Murphy, K. "Machine Learning: A Probabilistic
+		Perspective." MIT press, 2012
+	    </li>
+
+	    <li class="list-group-item">
+	      <b><a href="https://www.math.arizona.edu/~jwatkins/statbook.pdf" target="_blank" rel="noopener noreferrer">Watkins</a> :</b> Watkins, J. "Introduction to the Science of Statistics: From Theory to Implementation." 
+	    </li>	    	    
+	  </ul><br/>	  
+
+	  <h3>Instructor and Contact Information:</h3>
+	  <p>
+	    <b>Instructor:</b> Jason Pacheco, GS 724, Email: <a href="mailto:pachecoj@cs.arizona.edu">pachecoj@cs.arizona.edu</a></br>
+	    <b>TA:</b> Enfa Rose George: <a href="mailto:enfageorge@email.arizona.edu">enfageorge@email.arizona.edu</a></br>
+	    <b>TA:</b> Saiful Islam Salim <a href="mailto:saifulislam@email.arizona.edu">saifulislam@email.arizona.edu</a></br>
+	    <b>Office Hours:</b> </br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;Enfa, Mondays, 10:30 - 11:30, Gould-Simpson Rm 934, Desk #6 (Hybrid)</br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;Saiful, Tuesdays, 10:00 - 11:00, Gould-Simpson Rm 942 (Hybrid)</br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;Jason, Wednesdays, 10:00 - 11:00, (Zoom)</br>
+	    <b>D2L:</b> <a href="https://d2l.arizona.edu/d2l/home/1072117" target="_blank" rel="noopener noreferrer">https://d2l.arizona.edu/d2l/home/1072117</a> </br>
+	    <b>Piazza:</b> <a href="https://piazza.com/arizona/fall2021/csc380" target="_blank" rel="noopener noreferrer">https://piazza.com/arizona/fall2021/csc380</a> </br>
+	    <b>Instructor Homepage:</b> <a href="http://www.pachecoj.com" target="_blank" rel="noopener noreferrer">http://www.pachecoj.com</a></br>
+	  </p>
+	</div>
+      </div>
+      <!-- /Main -->
+
+      <!-- Header -->
+      <div class="page-header">
+	<h1>
+	  <a name="schedule"><b>Schedule</b></a>
+      </div>
+      <!-- /Header -->
+
+
+      <!-- Main -->
+      <div class="row justify-content-center">	
+	<div class="col">
+	  <div class="table-responsive-md">
+	    <table class="table table-striped">
+	      <thead>
+		<tr>
+		  <th scope="col">Date</th>
+		  <th scope="col">Topic</th>
+		  <th scope="col">Readings</th>
+		  <th scope="col">Assignment</th>
+		</tr>
+	      </thead>
+	      <tbody>
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>8/24</td>		  
+		  <!-- topic -->
+		  <td>
+		    Introduction + Course Overview&nbsp;&nbsp;
+		    <a href="lectures/intro.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <i>What is Data Science?</i><br/>
+		    <a href="doc/what_is_data_science.pdf" target="_blank" rel="noopener noreferrer">Robinson, E. and Nolis, J.</a>
+		  </td>
+		  <!-- hw -->
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>8/26</td>		  
+		  <!-- topic -->
+		  <td>
+		    Random Events and Probability&nbsp;&nbsp;
+		    <a href="lectures/probability_intro.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://link.springer.com/book/10.1007/978-0-387-21736-9" target="_blank" rel="noopener noreferrer">WL</a> : CH1
+		  </td>
+		  <!-- hw -->
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>8/31</td>		  
+		  <!-- topic -->
+		  <td>
+		    Discrete Probability Distributions + numpy.random&nbsp;&nbsp;
+		    <a href="lectures/discrete_probability.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://link.springer.com/book/10.1007/978-0-387-21736-9" target="_blank" rel="noopener noreferrer">WL</a> : CH2
+		  </td>
+		  <!-- hw -->
+		  <td><a href="hws/hw01.pdf" target="_blank" rel="noopener noreferrer">HW1</a> (Due: 9/9)		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>9/2</td>		  
+		  <!-- topic -->
+		  <td>
+		    Continuous Probability, PDFs&nbsp;&nbsp;
+		    <a href="lectures/continuous_probability.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		  </td>
+		  <!-- hw -->
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->		
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>9/7</td>		  
+		  <!-- topic -->
+		  <td>
+		    Moments and Dependence&nbsp;&nbsp;
+		    <a href="lectures/moments.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://link.springer.com/book/10.1007/978-0-387-21736-9" target="_blank" rel="noopener noreferrer">WL</a> : CH3
+		  </td>
+		  <!-- hw -->
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>9/9</td>		  
+		  <!-- topic -->
+		  <td>
+		    Introduction to Classical Statistics&nbsp;&nbsp;
+		    <a href="lectures/statistics.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://link.springer.com/book/10.1007/978-0-387-21736-9" target="_blank" rel="noopener noreferrer">WL</a> : Sec. 9.1 &amp; 9.2, Sec. 6.3
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    <a href="hws/hw02.pdf" target="_blank" rel="noopener noreferrer">HW2</a> (Due: 9/16)		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>9/14</td>		  
+		  <!-- topic -->
+		  <td>
+		    Statistical Inference and Estimation&nbsp;&nbsp;
+		    <a href="lectures/statistics.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://link.springer.com/book/10.1007/978-0-387-21736-9" target="_blank" rel="noopener noreferrer">WL</a> : Sec. 9.3 - 9.7
+		  </td>
+		  <!-- hw -->
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>9/16</td>		  
+		  <!-- topic -->
+		  <td>
+		    Statistical Inference and Estimation&nbsp;&nbsp;
+		    <a href="lectures/statistics.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://link.springer.com/book/10.1007/978-0-387-21736-9" target="_blank" rel="noopener noreferrer">WL</a> : Sec. CH 8, Sec. 5.3 &amp; 5.4
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    <a href="hws/hw03.pdf" target="_blank" rel="noopener noreferrer">HW3</a> (Due: 9/23)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>9/21</td>		  
+		  <!-- topic -->
+		  <td>
+		    Bayesian Probability&nbsp;&nbsp;
+		    <a href="lectures/bayes.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://link.springer.com/book/10.1007/978-0-387-21736-9" target="_blank" rel="noopener noreferrer">WL</a> : Sec. 11.1-11.4, Sec. 24.1 - 24.2 <br/>
+		  </td>
+		  <!-- hw -->
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>9/23</td>		  
+		  <!-- topic -->
+		  <td>
+		    Bayesian Inference and Estimation&nbsp;&nbsp;
+		    <a href="lectures/bayes.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://arizona-primo.hosted.exlibrisgroup.com/permalink/f/6ljalh/01UA_ALMA51543591360003843" target="_blank" rel="noopener noreferrer">MK</a> : Sec. 5.1 - 5.2.1
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    <a href="hws/hw04.pdf" target="_blank" rel="noopener noreferrer">HW4</a> (Due: 10/3)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>9/28</td>		  
+		  <!-- topic -->
+		  <td>
+		    Introduction to Data Analysis and Visualization&nbsp;&nbsp;
+		    <a href="lectures/data.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://www.math.arizona.edu/~jwatkins/statbook.pdf" target="_blank" rel="noopener noreferrer">Watkins</a> : CH 1
+		    
+		  </td>
+		  <!-- hw -->
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>9/30</td>		  
+		  <!-- topic -->
+		  <td>
+		    Data Summarization&nbsp;&nbsp;
+		    <a href="lectures/data.pdf" target="_blank" rel="noopener noreferrer">(slides)</a> <a href="lectures/pandas.pdf" target="_blank" rel="noopener noreferrer">(Pandas slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://www.math.arizona.edu/~jwatkins/statbook.pdf" target="_blank" rel="noopener noreferrer">Watkins</a> : CH 2
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    <b>HW5</b> (Due: 10/12)<br/> (1) <a href="hws/hw05.ipynb" target="_blank" rel="noopener noreferrer">Jupyter Notebook</a> (2) <a href="hws/starbucks.json" target="_blank" rel="noopener noreferrer">Data</a> 
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>10/5</td>		  
+		  <!-- topic -->
+		  <td>
+		    Data Collection&nbsp;&nbsp;
+		    <a href="lectures/data.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://www.math.arizona.edu/~jwatkins/statbook.pdf" target="_blank" rel="noopener noreferrer">Watkins</a> : CH 4  
+		  </td>
+		  <!-- hw -->
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>10/7</td>		  
+		  <!-- topic -->
+		  <td>
+		    Data Collection&nbsp;&nbsp;
+		    <a href="lectures/data.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <b>Scribbr:</b><br/>
+		    <ul>
+		      <li><a href="https://www.scribbr.com/category/statistics/" target="_blank" rel="noopener noreferrer">A Step-by-step Guide to Statistical Analysis</a></li>
+		      <li><a href="https://www.scribbr.com/methodology/data-collection/" target="_blank" rel="noopener noreferrer">A Step-by-step Guide to Data Collection</a></li>
+		      <li><a href="https://www.scribbr.com/methodology/population-vs-sample/" target="_blank" rel="noopener noreferrer">Population vs. Sample: What's the Difference?</a></li>
+		      <li><a href="https://www.scribbr.com/methodology/sampling-bias/" target="_blank" rel="noopener noreferrer">Sampling Bias</a></li>
+		      <li>Sampling Methods:
+			<ul>			
+		        <li><a href="https://www.scribbr.com/methodology/sampling-methods/" target="_blank" rel="noopener noreferrer">Probability vs. Non-Probability Sampling</a></li>
+			<li><a href="https://www.scribbr.com/methodology/simple-random-sampling/" target="_blank" rel="noopener noreferrer">Simple Random Sampling</a></li>
+			<li><a href="https://www.scribbr.com/methodology/systematic-sampling/" target="_blank" rel="noopener noreferrer">Systematic Sampling</a></li>
+			<li><a href="https://www.scribbr.com/methodology/stratified-sampling/" target="_blank" rel="noopener noreferrer">Stratefied Sampling</a></li>
+			<li><a href="https://www.scribbr.com/methodology/cluster-sampling/" target="_blank" rel="noopener noreferrer">Cluster Sampling</a></li>
+		      </ul>
+		      </li>
+		    </ul>
+		  </td>
+		  <!-- hw -->
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>10/12</td>		  
+		  <!-- topic -->
+		  <td>
+		    Introduction to Machine Learning&nbsp;&nbsp;
+		    <a href="lectures/mlintro.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>10/14</td>		  
+		  <!-- topic -->
+		  <td>
+		    Midterm Review
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    <b>Midterm Exam</b> (Due: 10/19)<br/>
+		    Available on D2L
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>10/19</td>		  
+		  <!-- topic -->
+		  <td>
+		    Prediction and Predictive Models&nbsp;&nbsp;
+		    <a href="lectures/predictivemodels.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://arizona-primo.hosted.exlibrisgroup.com/permalink/f/6ljalh/01UA_ALMA51543591360003843" target="_blank" rel="noopener noreferrer">MK</a> : CH 1.1 - 1.3
+		  </td>
+		  <!-- hw -->
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>10/21</td>		  
+		  <!-- topic -->
+		  <td>
+		    Learning and Training for Predictive Models&nbsp;&nbsp;
+		    <a href="lectures/predictivemodels.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://arizona-primo.hosted.exlibrisgroup.com/permalink/f/6ljalh/01UA_ALMA51543591360003843" target="_blank" rel="noopener noreferrer">MK</a> : CH 1.4, CH 3.5
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>10/26</td>		  
+		  <!-- topic -->
+		  <td>
+		    Linear Models: Linear Regression&nbsp;&nbsp;
+		    <a href="lectures/linearmodels.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://arizona-primo.hosted.exlibrisgroup.com/permalink/f/6ljalh/01UA_ALMA51543591360003843" target="_blank" rel="noopener noreferrer">MK</a> : CH 7.1 - 7.3
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    <a href="hws/hw06.zip">HW6</a> (Due: 11/2)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>10/28</td>		  
+		  <!-- topic -->
+		  <td>
+		    Linear Models: Regularized Linear Regression&nbsp;&nbsp;
+		    <a href="lectures/linearmodels.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://arizona-primo.hosted.exlibrisgroup.com/permalink/f/6ljalh/01UA_ALMA51543591360003843" target="_blank" rel="noopener noreferrer">MK</a> : 7.5 - 7.6
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>11/2</td>		  
+		  <!-- topic -->
+		  <td>
+		    Linear Models: Logistic Regression&nbsp;&nbsp;
+		    <a href="lectures/linearmodels.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://arizona-primo.hosted.exlibrisgroup.com/permalink/f/6ljalh/01UA_ALMA51543591360003843" target="_blank" rel="noopener noreferrer">MK</a> : CH 8.1 - 8.3
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>11/4</td>		  
+		  <!-- topic -->
+		  <td>
+		    Linear Models: Logistic Regression (cont'd)&nbsp;&nbsp;
+		    <a href="lectures/linearmodels.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://arizona-primo.hosted.exlibrisgroup.com/permalink/f/6ljalh/01UA_ALMA51543591360003843" target="_blank" rel="noopener noreferrer">MK</a> : CH 14.1 - 14.2, 14.4, 14.5
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    <a href="hws/hw07.zip">HW7</a> (Due: 11/11)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>11/9</td>		  
+		  <!-- topic -->
+		  <td>
+		    Nonlinear Models&nbsp;&nbsp;
+		    <a href="lectures/nonlinearmodels.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>11/11</td>		  
+		  <!-- topic -->
+		  <td>
+		    <b>Veteran's Day / NO CLASS</b>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    
+		  </td>
+		  <!-- hw -->
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>11/16</td>		  
+		  <!-- topic -->
+		  <td>
+		    Nonlinear Models : Support Vector Machines&nbsp;&nbsp;
+		    <a href="lectures/nonlinearmodels.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    <a href="hws/hw08.zip">HW8</a> (Due: 11/23)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>11/18</td>		  
+		  <!-- topic -->
+		  <td>
+		    Nonlinear Models : Neural Networks&nbsp;&nbsp;
+		    <a href="lectures/nonlinearmodels.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://youtu.be/aircAruvnKk" target="_blank" rel="noopener noreferrer">Youtube : 3blue1Brown : What is a neural network?</a>
+		  </td>
+		  <!-- hw -->
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>11/23</td>		  
+		  <!-- topic -->
+		  <td>
+		    Clustering: K-Means&nbsp;&nbsp;
+		    <a href="lectures/kmeans.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>&nbsp;&nbsp;
+		    <a href="lectures/kmeans_notes.pdf" target="_blank" rel="noopener noreferrer">(notes)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-k-means-clustering/" target="_blank" rel="noopener noreferrer">Analytics Vidhya</a>
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>11/25</td>		  
+		  <!-- topic -->
+		  <td>
+		    <b>Thanksgiving Recess / NO CLASS</b>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    
+		  </td>
+		  <!-- hw -->
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>11/30</td>		  
+		  <!-- topic -->
+		  <td>
+		    Clustering: Gaussian Mixture Models&nbsp;&nbsp;
+		    <a href="lectures/gmm.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    <a href="https://towardsdatascience.com/gaussian-mixture-models-explained-6986aaf5a95" target="_blank" rel="noopener noreferrer">Gaussian Mixture Models Explained (Towards Data Science)</a><br/>
+		    <a href="https://arizona-primo.hosted.exlibrisgroup.com/permalink/f/6ljalh/01UA_ALMA51543591360003843" target="_blank" rel="noopener noreferrer">MK</a> : CH 11.1-11.4.1
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    <a href="hws/hw09.zip">HW9</a> (Due: 12/7)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>12/2</td>		  
+		  <!-- topic -->
+		  <td>
+		    Dimensionality Reduction&nbsp;&nbsp;
+		    <a href="lectures/dimreduction.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>		    
+		    <a href="https://builtin.com/data-science/step-step-explanation-principal-component-analysis" target="_blank" rel="noopener noreferrer">Step-by-step Explanation of PCA</a><br/>
+		    <a href="https://cscheid.net/writing/data_science/pca.html" target="_blank" rel="noopener noreferrer">PCA : C. Scheidegger</a><br/>
+		    <a href="https://arizona-primo.hosted.exlibrisgroup.com/permalink/f/6ljalh/01UA_ALMA51543591360003843" target="_blank" rel="noopener noreferrer">MK</a> : 12.2.1, 12.2.3, 12.3<br/>
+		  </td>
+		  <!-- hw -->
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>12/7</td>		  
+		  <!-- topic -->
+		  <td>
+		    Course Wrapup&nbsp;&nbsp;
+		    <a href="lectures/wrapup.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    
+		  </td>
+		  <!-- hw -->
+		  <td>
+		    <b>Final Exam</b> (Due: 12/15)<br/>
+		    <a href="hws/plots_finalexam.pdf" target="_blank" rel="noopener noreferrer">(example plots)</a><br/>
+		    Available on D2L
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <!-- date -->
+		  <td>12/15</td>		  
+		  <!-- topic -->
+		  <td>
+		    <b>Final Exam Due</b>
+		  </td>
+		  <!-- reading -->
+		  <td>
+		    
+		  </td>
+		  <!-- hw -->
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+	      </tbody>
+	    </table>
+	  </div>
+	</div>
+      </div>
+      
+
+</div>
+<!-- /container -->
+
+<div class="container">
+  <hr>
+  <div class="row justify-content-end">
+    <div class="col-md" align="right">      
+      &copy; Jason Pacheco, 2020
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

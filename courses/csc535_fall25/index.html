@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Probabilistic Graphical Models</title>
+    <meta name="author" content="Jason Pacheco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="/theme/html5.js"></script>
+	<![endif]-->
+    <link href="./css/ipython.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.1.3/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/pygments.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <div class="container">
+
+      <!-- Navigation -->
+      <nav class="nav nav-pills justify-content-end">
+	<a class="nav-item nav-link active" href="#">Home</a>
+	<a class="nav-item nav-link" href="https://d2l.arizona.edu/d2l/home/1651352" target="_blank" rel="noopener noreferrer">D2L</a>
+	<a class="nav-item nav-link" href="https://piazza.com/arizona/fall2025/csc535" target="_blank" rel="noopener noreferrer">Piazza</a>
+	<a class="nav-item nav-link" href="syllabus.pdf" target="_blank" rel="noopener noreferrer">Syllabus</a>
+	<a class="nav-item nav-link" href="#schedule" target="_blank" rel="noopener noreferrer">Schedule</a>
+	<!-- <a class="nav-item nav-link" href="resources.html">Resources</a> -->
+      </nav>
+      <hr>
+      
+      <!-- Header -->
+      <div class="page-header">
+	<h1>
+	  <a href="#"><b>Probabilistic Graphical Models</b></a><br/>
+	  <small class="text-muted">CSC 535 | Fall 2025 | Tue / Th 5:00 - 6:15 PM | Gould-Simpson 701</small>
+	</h1>
+      </div>
+      <!-- /Header -->
+      
+      <!-- Main -->
+      <div class="row justify-content-center">	
+	<div class="col-md-9">
+	  <center><img src="img/pose_teaser.jpg" width="400" align="center"></center><br/>
+	  <h2>Description of Course</h2>
+	  <p>Probabilistic graphical modeling and inference is a
+	  powerful modern approach to representing the combined
+	  statistics of data and models, reasoning about the world in
+	  the face of uncertainty, and learning about it from data. It
+	  cleanly separates the notions of representation, reasoning,
+	  and learning. It provides a principled framework for
+	  combining multiple sources of information, such as prior
+	  knowledge about the world, with evidence about a particular
+	  case in observed data. This course will provide a solid
+	  introduction to the methodology and associated techniques,
+	  and show how they are applied in diverse domains ranging
+	  from computer vision to computational biology to
+	  computational neuroscience.</p>
+
+	  <!-- <div class="alert alert-primary" role="alert"> -->
+	  <!--   Registration is restricted to CS students exclusively -->
+	  <!--   during the enrollment period.  Any <b>non-CS students</b> -->
+	  <!--   wishing to enroll in this course -->
+	  <!--   should <a href="mailto:pachecoj@cs.arizona.edu">email -->
+	  <!--   me</a> and -->
+	  <!--   CC <a href="martinmarquez@cs.arizona.edu">Martin -->
+	  <!--   Marquez</a>.  Space is limited so I will prioritize -->
+	  <!--   enrollment in the order of emails I receive. -->
+	  <!-- </div> -->
+
+	  <h2>Textbooks</h2>
+	  <p>
+	    The following textbook will be used for reading
+	    assignments.  An electronic copy is available via the UA
+	    library webpage (NetID login required):
+	    <div class="col-md-11">
+	      <!--
+		Bishop, C. "Pattern Recognition and Machine Learning."
+		Springer, 2006
+		<a href="https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf">(
+		PDF )</a><br>
+		-->
+		
+		Murphy,	K. "Machine Learning: A Probabilistic
+		Perspective." MIT press, 2012
+		<a href="https://arizona-ua.primo.exlibrisgroup.com/permalink/01UA_INST/1h3gjm1/cdi_proquest_ebookcentral_EBC3339490">(
+		UA Library )</a> 
+	      </div>
+	  </p>
+
+	  <h2>Course Management</h2>
+	  <p>
+	    <b>D2L:</b> <a href="https://d2l.arizona.edu/d2l/home/1651352"target="_blank" rel="noopener noreferrer">https://d2l.arizona.edu/d2l/home/1651352</a><br/>
+	    <b>Piazza:</b> <a href="https://piazza.com/arizona/fall2025/csc535"target="_blank" rel="noopener noreferrer">https://piazza.com/arizona/fall2025/csc535</a><br/>
+	  </p>	  
+
+	  <h2>Instructor and Contact Information:</h2>
+	  <p>
+	    <b>Instructor:</b> Jason Pacheco, GS 707, Email: <a href="mailto:pachecoj@cs.arizona.edu">pachecoj@cs.arizona.edu</a></br>
+	    <b>Office Hours:</b> Fridays, 3-5pm (Zoom via D2L Calendar)</br>
+	    <b>Instructor Homepage:</b> <a href="http://www.pachecoj.com">http://www.pachecoj.com</a></br>
+	  </p>
+
+
+	</div>
+      </div>
+      <!-- /Main -->
+
+      <!-- Header -->
+      <div class="page-header">
+	<h1>
+	  <a name="schedule"><b>Schedule</b></a>
+      </div>
+      <!-- /Header -->
+
+
+      <!-- Main -->
+      <div class="row justify-content-center">	
+	<div class="col">
+	  <div class="table-responsive-md">
+	    <table class="table table-striped">
+	      <thead>
+		<tr>
+		  <th scope="col">Date</th>
+		  <th scope="col">Topic</th>
+		  <th scope="col">Readings</th>
+		  <th scope="col">Assignment</th>
+		</tr>
+	      </thead>
+	      <tbody>
+
+		<!-- Lecture -->
+		<tr>
+		  <td>8/26</td>
+		  <td>
+		    Introduction + Course Overview&nbsp;&nbsp;<a href="lectures/intro.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    <a href="https://www.w3schools.com/python/numpy/default.asp" target="_blank" rel="noopener noreferrer">W3Schools : Numpy Tutorial</a> <br/>
+		    <a href="https://www.youtube.com/watch?v=DcfYgePyedM" target="_blank" rel="noopener noreferrer">YouTube : Numpy Tutorial : Mr. P Solver</a> 
+		    
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>8/28</td>
+		  <td>
+		    Probability and Statistics : Discrete Probability&nbsp;&nbsp;<a href="lectures/probability.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 2.1 - 2.4
+		  </td>
+		  <td>
+		    <b>HW1</b> (Due: 9/9)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>9/02</td>
+		  <td>
+		    Probability and Statistics : Continuous Probability&nbsp;&nbsp;<a href="lectures/probability.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 2.4-2.7
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->		
+
+		<!-- Lecture -->
+		<tr>
+		  <td>9/04</td>
+		  <td>
+		    Probability and Statistics : Bayesian Probability&nbsp;&nbsp;<a href="lectures/bayes.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 3 <br/><br/>
+
+		    <b>Additional Resources</b><br/>
+		    <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM"target="_blank" rel="noopener noreferrer">YouTube: 3Blue1Brown : Bayes Rule</a><br/><br/>
+		    <i>Why Isn't Everyone a Bayesian?</i><br/>
+		    <a href="http://www2.stat.duke.edu/courses/Spring09/sta122/Readings/EfronWhyEveryone.pdf">Efron, B. 1986</a><br/><br/>
+		    <i>Objections to Bayesian Statistics</i><br/>
+		    <a href="https://projecteuclid.org/journals/bayesian-analysis/volume-3/issue-3/Objections-to-Bayesian-statistics/10.1214/08-BA318.pdf" target="_blank" rel="noopener noreferrer">Gelman,
+		      A. 2008</a><br/><br/>
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>9/09</td>
+		  <td>
+		    Probabilistic Graphical Models (PGMs) : Intro &nbsp;&nbsp;<a href="lectures/pgms.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 10.1 - 10.5
+		  </td>
+		  <td>
+		    <b>HW2</b> (Due: 9/23)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>9/11</td>
+		  <td>
+		    PGMs : Directed &nbsp;&nbsp;<a href="lectures/pgms.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 10.1 - 10.5
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>9/16</td>
+		  <td>
+		    PGMs : Undirected &nbsp;&nbsp;<a href="lectures/pgms.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 19.1 - 19.4
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>9/18</td>
+		  <td>
+		    Message Passing Inference (Sum-Product Belief Propagation)&nbsp;&nbsp;<a href="lectures/msgpass.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 20<br/>
+		    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=910572" target="_blank" rel="noopener noreferrer">Kschischang, et al. "Factor Graphs and the Sum-Product Algorithm</a>		    
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>9/23</td>
+		  <td>
+		    Message Passing (Loopy BP, Max-Product BP)&nbsp;&nbsp;<a href="lectures/msgpass.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 20<br/>
+		    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=910572" target="_blank" rel="noopener noreferrer">Kschischang, et al. "Factor Graphs and the Sum-Product Algorithm</a>
+		  </td>
+		  <td>
+		    <b>HW3</b> (Due: 10/9)<br/>
+		    Example factor-to-variable message (<a href="notes/factor_2_var_msg.ipynb" target="_blank" download>Jupyter Notebook</a>)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>9/25</td>
+		  <td>
+		    Message Passing (Variable Elimination)&nbsp;&nbsp;<a href="lectures/msgpass.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 20
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>9/30</td>
+		  <td>
+		    Message Passing (Junction Tree)&nbsp;&nbsp;<a href="lectures/msgpass.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 20
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>10/02</td>
+		  <td>
+		    Parameter Learning / Expectation Maximization&nbsp;&nbsp;<a href="lectures/learning.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 11
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>10/07</td>
+		  <td>
+		    Expectation Maximization (Continued)&nbsp;&nbsp;<a href="lectures/learning.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>		    
+		  </td>
+		  <td>		    
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>10/09</td>
+		  <td>
+		    Dynamical Systems (HMM, Baum-Welch Learning)&nbsp;&nbsp;<a href="lectures/dynamicalsys.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 17
+		  </td>
+		  <td>
+		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>10/14</td>
+		  <td>
+		    Dynamical Systems (Linear Dynamical Systems, Kalman Filter)&nbsp;&nbsp;<a href="lectures/dynamicalsys.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 17
+		  </td>
+		  <td>
+		    <b>Midterm</b> (Due: TBD)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>10/16</td>
+		  <td>
+		    Dynamical Systems (Nonlinear and Switching State-Space)&nbsp;&nbsp;<a href="lectures/dynamicalsys.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    CH 18
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>10/21</td>
+		  <td>
+		    Monte Carlo Methods (Rejection Sampling, Importance Sampling)&nbsp;&nbsp;<a href="lectures/montecarlo.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		  <td>
+		    Sec. 23.1-23.4
+		  </td>
+		  <td>
+		    <b>HW4</b> (Due: 11/06)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>10/23</td>
+		  <td> Monte Carlo Methods (Sequential Monte Carlo)&nbsp;&nbsp;<a href="lectures/montecarlo.pdf"target="_blank" rel="noopener noreferrer">(slides)</a></td>
+		  <td> Sec. 23.5 </td>
+		  <td>
+		    
+		    </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>10/28</td>
+		  <td> Markov Chain Monte Carlo (Metropolis-Hastings)&nbsp;&nbsp;<a href="lectures/mcmc.pdf"target="_blank" rel="noopener noreferrer">(slides)</a>
+		    <!-- Exponential Famiies --></td>
+		  <td> Sec. 24.1-24.4<br/>
+		    <a href="https://www.cs.princeton.edu/courses/archive/fall07/cos597C/readings/Neal1993.pdf" target="_blank" rel="noopener noreferrer">Neal. "Probabilistic Inference Using MCMC." 1993</a><br/>
+		    <a href="http://roke.eecs.ucf.edu/Reading/Papers/An%20Introduction%20to%20MCMC%20for%20Machine%20Learning.pdf" target="_blank" rel="noopener noreferrer">Andrieu et al. "An Intro. to MCMC for ML." 2003</a></td>
+		  <td>		    
+		    </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>10/30</td>
+		  <td> Markov Chain Monte Carlo (Metropolis-Hastings)&nbsp;&nbsp;<a href="lectures/mcmc.pdf"target="_blank" rel="noopener noreferrer">(slides)</a></td>
+		  <td> Sec. 24.1-24.4 </td>
+		  <td>		    
+		    </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>11/04</td>
+		  <td>Markov Chain Monte Carlo (Gibbs Sampling)&nbsp;&nbsp;<a href="lectures/mcmc.pdf"target="_blank" rel="noopener noreferrer">(slides)</a></td>
+		  <td>&nbsp;</td>
+		  <td>		    
+		    </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>11/06</td>
+		  <td>Exponential Family&nbsp;&nbsp; <a href="lectures/expfam.pdf"target="_blank" rel="noopener noreferrer">(slides)</a></td>
+		  <td>Sec. 9.1-9.2 </td>
+		  <td>
+		    <b>HW 5</b> (Due: 11/25)
+		    </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>11/11</td>
+		  <td><strong>Veterans Day. NO CLASS</strong></td>
+		  <td>		    
+		  </td>
+		  <td>
+		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>11/13</td>
+		  <td> Variational Inference (Mean Field)&nbsp;&nbsp; <a href="lectures/variational.pdf"target="_blank" rel="noopener noreferrer">(slides)</a></td>
+		  <td> Sec. 21.1-21.7 </td>
+		  <td>
+		    </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>11/18</td>
+		  <td>Bayesian Deep Learning (Bayesian Neural Networks)&nbsp;&nbsp; <a href="lectures/bayesianDL.pdf" target="_blank" rel="noopener noreferrer">(slides)</a></td>
+		  <td>&nbsp;</td>
+		  <td>		    
+		    </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>11/20</td>
+		  <td> Bayesian Deep Learning (Monte Carlo Dropout, Bayes by Backprop)&nbsp;&nbsp; <a href="lectures/bayesianDL.pdf" target="_blank" rel="noopener noreferrer">(slides)</a></td>
+		  <td>&nbsp;</td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>11/25</td>
+		  <td> Bayesian Deep Learning (Variational Autoencoder)&nbsp;&nbsp; <a href="lectures/vae.pdf" target="_blank" rel="noopener noreferrer">(slides)</a></td>
+		  <td>
+		    </td>
+		  <td>
+		    <b>HW 6</b> (Due: 12/9)
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>11/27</td>
+		  <td>
+		    <b>Thanksgiving. NO CLASS</b>
+		  </td>
+		  <td>
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>12/02</td>
+		  <td>TBD</td>
+		  <td>
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>12/04</td>
+		  <td>TBD</td>
+		  <td>
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+		
+		<!-- Lecture -->
+		<tr>
+		  <td>12/09</td>
+		  <td>
+		    Course Wrapup&nbsp;&nbsp;
+		    <a href="lectures/finallecture.pdf" target="_blank"
+		rel="noopener noreferrer">(slides)</a><br/><br/>
+		    <a href="lectures/finalexam.pdf" target="_blank"
+		rel="noopener noreferrer">(Final Exam review slides)</a>
+		  </td>
+		  <td>		    
+		  </td>
+		  <td>		    
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+		
+	      </tbody>
+	    </table>
+	  </div>
+	</div>
+      </div>
+      
+
+</div>
+<!-- /container -->
+
+<div class="container">
+  <hr>
+  <div class="row justify-content-end">
+    <div class="col-md" align="right">      
+      &copy; Jason Pacheco, 2020
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

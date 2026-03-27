@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Schedule | Advanced Topics in Probabilistic Graphical Models</title>
+    <meta name="author" content="Jason Pacheco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="/theme/html5.js"></script>
+	<![endif]-->
+    <link href="./css/ipython.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.1.3/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/pygments.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <div class="container">
+
+      <!-- Navigation -->
+      <nav class="nav nav-pills justify-content-end">
+	<a class="nav-item nav-link" href="index.html">Home</a>
+	<a class="nav-item nav-link" href="http://d2l.arizona.edu/d2l/home/814136">D2L</a>
+	<a class="nav-item nav-link" href="syllabus.html">Syllabus</a>
+	<a class="nav-item nav-link active" href="#">Schedule</a>
+	<a class="nav-item nav-link" href="resources.html">Resources</a>
+      </nav>
+      <hr>
+      
+      <!-- Header -->
+      <div class="page-header">
+	<h1>
+	  <a href="#"><b>Advanced Topics in Probabilistic Graphical Models</b></a><br/>
+	  <small class="text-muted">CSC 655-1 | Fall 2019 | MW 11am-12:15pm GS 942</small>
+	</h1>
+      </div>
+      <!-- /Header -->
+      
+      <!-- Main -->
+      <div class="row justify-content-center">	
+	<div class="col">
+	  <h4>Primary Resources</h4>
+	  <ul class="list-group list-group-flush">
+	    <li class="list-group-item">
+	      <b><a href="papers/WainwrightJordan_TR2008.pdf">WJ</a> :</b> Wainwright, M. J., and Jordan, M. I. "Graphical models, exponential families, and variational inference." Foundations and Trends in Machine Learning, 2008
+	    </li>
+	    <li class="list-group-item">
+	      <b><a href="http://www.cs.ucl.ac.uk/staff/d.barber/brml/">DB</a> :</b> Barber, D. "Bayesian Reasoning and Machine Learning." Cambridge University Press, 2012
+	    </li>
+	    <li class="list-group-item">
+	      <b><a href="papers/PRML06.pdf">PRML</a> :</b> Bishop, C. "Pattern Recognition and Machine Learning." Springer, 2006
+	    </li>
+	    <li class="list-group-item">
+	      <b><a href="papers/pachecojPhD.pdf">JP</a> :</b> Pacheco, J. L. "Variational Approximations with Diverse Applications." Brown PhD Thesis, 2016
+	    </li>	    
+	    <li class="list-group-item">
+	      <b><a href="papers/sudderthPhD.pdf">ES</a> :</b> Sudderth, E. B. "Graphical Models for Visual Object Recognition and Tracking." MIT PhD Thesis, 2006
+	    </li>
+	  </ul><br/>
+
+	  <h4>Calendar</h4>
+	  <div class="table-responsive-md">
+	    <table class="table table-striped">
+	      <thead>
+		<tr>
+		  <th scope="col">Date</th>
+		  <th scope="col">Topic</th>
+		  <th scope="col">Assigned Reading</th>
+		  <th scope="col">Presenter</th>
+		  <th scope="col">Additional Resources</th>
+	      </thead>
+	      <tbody>
+		<tr>
+		  <td>8/26</td>
+		  <td>
+		    Introduction + Course Overview
+		  </td>
+		  <td>
+		    <i>Thirteen Rules for Giving a Really Bad Talk</i><br/>
+		    <a href="papers/2013ThirteenRules.pdf">Efron, B. 2013</a>		    
+		  </td>
+		  <td>
+		    Jason Pacheco<br/>
+		    <a href="lectures/lec1_intro.pdf">(slides)</a>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<tr>
+		  <td>8/28</td>
+		  <td>
+		    Bayesian Inference
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		    Jason Pacheco<br/>
+		    <a href="lectures/lec2_bayes.pdf">(slides)</a>
+		  </td>
+		  <td>
+		    <i>Why Isn't Everyone a Bayesian?</i><br/>
+		    <a href="papers/Efron_WhyNotBayes_AmerStat86.pdf">Efron, B. 1986</a><br/>
+		    <i>Objections to Bayesian Statistics</i><br/>
+		    <a href="papers/Gelman_BayesObjections_2008.pdf">Gelman, A. 2008</a>
+		  </td>
+		</tr>
+		<tr>
+		  <td>9/2</td>
+		  <td colspan="4"><b>Labor Day | No Class</b></td>
+		</tr>		
+		<tr>
+		  <td>9/4</td>
+		  <td>Graphical Models</td>
+		  <td><b><a href="papers/WainwrightJordan_TR2008.pdf">WJ</a></b> - Chapter 2 </td>
+		  <td>
+		    Jason Pacheco<br/>
+		    <a href="lectures/lec3_pgms.pdf">(slides)</a>
+		  </td>
+		  <td>
+		    <b><a href="papers/pachecojPhD.pdf">JP</a></b> - Sec. 2.1<br/>
+		    <b><a href="papers/sudderthPhD.pdf">ES</a></b> - Sec. 2.2
+		  </td>
+		</tr>
+		<tr>
+		  <td>9/9</td>
+		  <td>Exponential Families</td>
+		  <td><b><a href="papers/WainwrightJordan_TR2008.pdf">WJ</a></b> - Chapter 3 </td>
+		  <td>
+		    Jason Pacheco<br/>
+		    <a href="lectures/lec4_expfam.pdf">(slides)</a>
+		  </td>
+		  <td>
+		    <b><a href="papers/pachecojPhD.pdf">JP</a></b> - Sec. 2.2<br/>
+		    <b><a href="papers/sudderthPhD.pdf">ES</a></b> - Sec. 2.1<br/>
+		    <b><a href="papers/PRML06.pdf">PRML</a></b> - Sec. 2.4		    
+		  </td>
+		</tr>
+		<tr>
+		  <td>9/11</td>
+		  <td>Variational Inference (VI)</td>
+		  <td>
+		    <b><a href="papers/PRML06.pdf">PRML</a></b> - Sec. 10.1-10.4
+		  </td>
+		  <td>
+		    Jason Pacheco<br/>
+		    <a href="lectures/lec5_varinf.pdf">(notes)</a>
+		  </td>
+		  <td>
+		    <b><a href="papers/pachecojPhD.pdf">JP</a></b> - Sec. 2.3<br/>
+		    <b><a href="papers/sudderthPhD.pdf">ES</a></b> - Sec. 2.3<br/>
+		    <b><a href="http://www.cs.ucl.ac.uk/staff/d.barber/brml/">DB</a></b> - Sec. 28.1-28.4<br/><br/>
+		    <i>Variational Inference: A Review for Statisticians</i><br/>
+		    <a href="https://arxiv.org/pdf/1601.00670.pdf">Blei, D., et al., J. Am. Stat. Assoc. 2017</a>
+		  </td>
+		</tr>
+		<tr>
+		  <td>9/16</td>
+		  <td>VI: Mean Field Variational Methods</td>
+		  <td>
+		    <i>Variational Message Passing</i><br/>
+		    <a href="papers/winn05a.pdf">Winn, J. and Bishop, C. JMLR, 2005<a>
+		  </td>
+		  <td>
+		    Simon Swenson<br/>
+		    <a href="lectures/simon_vmp.pdf">(notes)</a>
+		  </td>
+		  <td>
+		    <b><a href="papers/sudderthPhD.pdf">ES</a></b> - Sec. 2.3.1<br/>
+		    <b><a href="papers/PRML06.pdf">PRML</a></b> - Sec. 10.1-10.6<br/>
+		    <b><a href="papers/WainwrightJordan_TR2008.pdf">WJ</a></b> - Ch. 5<br/><br/>
+		    
+		    <i>An Introduction to Variational Methods for Graphical Models</i><br/>
+		    <a href="papers/Jordan_VIintro_1999.pdf">Jordan, M. I., et al. Machine Learning, 1999</a><br/>
+
+		    <i><b>Tutorial</b> Variational Bayes and Beyond: "Bayesian inference for big data"</i><br/>		    
+		    <a href="http://www.tamarabroderick.com/tutorial_2019_qut_vb.html">Broderick, T. 2019</a>
+		  </td>
+		</tr>
+		<tr>
+		  <td>9/18</td>
+		  <td>VI: Mean Field Example</td>
+		  <td>
+		    <i>Latent Dirichlet Allocation</i><br/>
+		    <a href="papers/blei03a.pdf">Blei, D. M., et al. JMLR, 2003</a>
+		  </td>
+		  <td>
+		    Marium Yousuf<br/>
+		    <a href="lectures/marium_lda.pdf">(slides)</a>
+		  </td>
+		  <td></td>
+		</tr>
+		<tr>
+		  <td>9/23</td>
+		  <td>Research Roundtable (Part 1)</td>
+		  <td></td>
+		  <td>Marina, Kairong</td>
+		  <td></td>
+		</tr>		
+		<tr>
+		  <td>9/25</td>
+		  <td>VI: Stochastic Variational</td>
+		  <td>
+		    <i>Stochastic Variational Inference</i>
+		    <a href="http://www.cs.columbia.edu/~blei/papers/HoffmanBleiWangPaisley2013.pdf">Hoffman, M. D. et al. JMLR, 2013
+		  </td>
+		  <td>
+		    Kairong Jiang<br/>
+		    <a href="lectures/kairong_stochasticvar.pdf">(notes)</a>
+		  </td>
+		  <td></td>
+		</tr>		
+		<tr>
+		  <td>9/30</td>
+		  <td>Research Roundtable (Part 2)</td>
+		  <td></td>
+		  <td>
+		    Marium, Loren, Simon
+		  </td>
+		  <td></td>
+		</tr>
+		<!-- <tr> -->
+		<!--   <td>9/30</td> -->
+		<!--   <td>VI: Automatic Mean Field</td> -->
+		<!--   <td> -->
+		<!--     <i>Automatic Differentiation Variational Inference</i><br/> -->
+		<!--     <a href="papers/Kucukelbir_ADVI_2017.pdf">Kucukelbir, A., et al. JMLR, 2017</a></td> -->
+		<!--   <td></td> -->
+		<!--   <td> -->
+		<!--     <i>Automatic Variational Inference in Stan</i><br/> -->
+		<!--     <a href="papers/Kucukelbir_ADVI_STAN_2015.pdf">Kucukelbir, A., et al. JMLR, 2015</a><br/> -->
+		<!--     <i>Black Box Variational Inference</i><br/> -->
+		<!--     <a href="papers/Ranganath_BBVI_2014.pdf">Ranganath, R., et al. AISTATS, 2014</a> -->
+		<!--   </td> -->
+		<!-- </tr> -->		
+		<tr>
+		  <td>10/2</td>
+		  <td>VI: Loopy Belief Propagation &amp; Bethe Variational Methods</td>
+		  <td>
+		    <i>Understanding Belief Propagation and its
+		      Generalizations</i><br/>
+		    <a href="papers/UnderstandingBP_YedidiaFreeWeiss.pdf">Yedidia, J. S., et al., IJCAI, 2001</a>
+		  </td>
+		  <td>
+		    Marina Kisley
+		    <a href="lectures/marina_bethe.pdf">(notes)</a>
+		  </td>
+		  <td>
+		    <b><a href="papers/WainwrightJordan_TR2008.pdf">WJ</a></b> - Sec. 4.1<br/>
+		    <b><a href="papers/sudderthPhD.pdf">ES</a></b> - Sec. 2.3.2<br/>
+		    <b><a href="papers/pachecojPhD.pdf">JP</a></b> - Sec. 2.3.1-2.3.2<br/><br/>
+		    <i>Constructing Free Energy Approximations and Generalized Belief Propagation Algorithms</i><br/>
+		    <a href="papers/Yedidia_GBP_InfoTheory05.pdf">Yedidia, J. et al., IEEE Info. Theory, 2005</a>
+		  </td>
+		</tr>
+		<tr>
+		  <td>10/7</td>
+		  <td>Research Roundtable (Part 2.5)</td>
+		  <td>
+		    <div class="alert alert-primary">
+		      <b>Open Topics Discussion:</b> Plan to discuss any changes to scheduled topics
+		    </div>
+		  </td>
+		  <td>Simon</td>
+		  <td></td>
+		</tr>		
+		<tr>
+		  <td>10/9</td>
+		  <td>VI: Expectation Propagation</td>
+		  <td>
+		    <b><a href="papers/PRML06.pdf">PRML</a></b> - Sec. 10.7<br/>
+		  </td>
+		  <td>
+		    Jason Pacheco<br/>
+		    <a href="lectures/lec6_ep.pdf">(slides)</a>
+		  </td>
+		  <td>
+		    <i>Expectation Propagation Summary</i><br/>
+		    <a href="papers/ep_summary.pdf">Sudderth, E., MIT 6.975 Course Notes, 2002</a><br/>
+		    <i>Expectation Propagation for Approximate Bayesian Inference</i><br/>
+		    <a href="papers/minka_ep_uai01.pdf">Minka, T. P. UAI, 2001</a>
+		  </td>
+		</tr>
+		<tr>
+		  <td>10/14</td>
+		  <td>Markov chain Monte Carlo (MCMC): Introduction</td>
+		  <td>
+		    <i>Introduction to Monte Carlo Methods</i><br/>
+		    <a href="http://www.inference.org.uk/mackay/erice.pdf">MacKay, D. J. C . Learning in Graphical Models. Springer, 1998</a>
+		  </td>
+		  <td>
+		    Lecture: Jason Pacheco<br/>
+		    <a href="lectures/lec7_mcmc.pdf">(slides)</a>
+		  </td>
+		  <td></td>
+		</tr>
+		<tr>
+		  <td>10/16</td>
+		  <td>MCMC: Hamiltonian Monte Carlo</td>
+		  <td><div class="alert alert-primary">
+		      <b>Term Project Proposals:</b> Due Fri 10/18<br/>
+		      Details on the <a href="resources.html">Resources</a> page.
+		    </div>
+		    <i>MCMC Using Hamiltonian Dynamics</i><br/>
+		    <a href="https://arxiv.org/pdf/1206.1901.pdf">Neal, R. M., From: "The Handbook of MCMC.", Chapman &amp; Hall / CRC Press, 2011</a><br/>
+		    <b>Read Sec. 1-4 (inclusive)</b>
+		  </td>
+		  <td>
+		    Kairong Jiang<br/>
+		    <a href="lectures/kairong_hmc.pdf">(slides)</a>
+		  </td>
+		  <td>
+		    
+		  </td>
+		</tr>
+		<tr>
+		  <td>10/16</td>
+		  <td>MCMC: Hamiltonian Monte Carlo (Cont'd)</td>
+		  <td>
+		    Typical Sets / Volume Preservation
+		  </td>
+		  <td>
+		    Jason Pacheco<br/>
+		    <a href="lectures/lec_hmcredux.pdf">(slides)</a>
+		  </td>
+		  <td>
+		    <i>A Conceptual Introduction to Hamiltonian Monte Carlo</i><br/>
+		    <a href="https://arxiv.org/pdf/1701.02434.pdf">Betancourt, M. arXiv, 2017</a>		    
+		  </td>
+		</tr>		
+		<tr>
+		  <td>10/23</td>
+		  <td>MCMC: No U-turn Sampler</td>
+		  <td>
+		    <i>The No-U-Turn sampler: Adaptively Setting Path Lengths in HMC</i><br/>
+		    <a href="http://www.jmlr.org/papers/volume15/hoffman14a/hoffman14a.pdf">Hoffman, M. D. and Gelman, A. JMLR, 2014</a>
+		  </td>
+		  <td>
+		    Simon Swenson<br/>
+		    <a href="lectures/simon_nouturn.pdf">(notes)</a>
+		  </td>
+		  <td></td>
+		</tr>		
+		<!-- <tr> -->
+		<!--   <td></td> -->
+		<!--   <td>MCMC: Slice Sampling</td> -->
+		<!--   <td> -->
+		<!--     <i>Slice Sampling</i><br/> -->
+		<!--     <a href="https://projecteuclid.org/euclid.aos/1056562461">Neal, R. N. The Annals of Stats., 2003</a><br/> -->
+		<!--     <b>Read through p. 36</b> -->
+		<!--   </td> -->
+		<!--   <td></td> -->
+		<!--   <td></td> -->
+		<!-- </tr> -->
+		<tr>
+		  <td>10/28</td>
+		  <td>MCMC: Reversible Jump MCMC</td>
+		  <td>
+		    <i>RJMCMC Computation and Bayesian Model Determination</i><br/>
+		    <a href="papers/green_rjmcmc95.pdf">Green, P. J. Biometrika, 1995</a>
+		  </td>
+		  <td>
+		    Loren Champlin<br/>
+		    <a href="lectures/loren_rjmcmc.pdf">(notes)</a>
+		  </td>
+		  <td>
+		    <i>On Bayesian Analysis of Mixtures with an Unknown Number of Components</i><br/>
+		    <a href="https://academic.oup.com/biomet/article-pdf/82/4/711/699533/82-4-711.pdf">Richardson, S. and Green, P. J. J. R. Stat. Soc., 1997</a><br/>
+		    <b>Minus attached discussion</b><br/>
+		    <i>Reversible Jump MCMC</i><br/>
+		    <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.408.3500&rep=rep1&type=pdf">Green, P. J. and Hastie, D. I. Genetics, 2009</a><br/>
+		    <i>Trans-dimensional markov chain monte carlo</i><br/>
+		    <a href="https://www.cc.gatech.edu/~isbell/reading/papers/hssschapter.pdf">Green, P. J. Oxford Stat. Sci. Ser., 2003</a><br/>
+		  </td>
+		</tr>
+		
+   	      	<tr>
+		  <td>10/30</td>
+		  <td>Dynamical Systems: Introduction</td>
+		  <td></td>
+		  <td>
+		    Lecture: Jason Pacheco<br/>
+		    <a href="lectures/lec_statespace.pdf">(slides)</a>
+		  </td>
+		  <td></td>
+		</tr>
+
+   	      	<tr>
+		  <td>11/4</td>
+		  <td>Dynamical Systems: Introduction (continued)</td>
+		  <td></td>
+		  <td>Lecture: Jason Pacheco</td>
+		  <td></td>
+		</tr>
+
+   	      	<tr>
+		  <td>11/6</td>
+		  <td>DS: Particle Filter</td>
+		  <td>
+		    <i>An Overview of Existing Methods and Recent Advances in Sequential Monte Carlo</i><br/>
+		    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4266870">Capp&eacute;, O. et al. Proc. IEEE. 2007</a><br/>
+		    <b>Read Sec. 1 &amp; 2 (Inclusive)</b>
+		  </td>
+		  <td>
+		    Lecture: Jason Pacheco<br/>
+		    <a href="lectures/lec_pf.pdf">(slides)</a>
+		  </td>
+		  <td>
+		    <i>A Tutorial on Particle Filtering and Smoothing: Fifteen years later</i><br/>
+		    <a href="https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/johansen/publications/dj11.pdf">Doucet, A. and Johansen, A. M. Handbook of Nonlinear Filtering. 2009</a>
+		  </td>
+		</tr>		
+
+		<tr>
+		  <td>11/11</td>
+		  <td colspan="4"><b>Veteran's Day | No Class</b></td>
+		</tr>
+
+   	      	<tr>
+		  <td>11/13</td>
+		  <td>DS: Particle Filters (Cont'd)</td>
+		  <td>No Assigned Readig</td>
+		  <td>Lecture: Jason Pacheco</td>
+		  <td></td>
+		</tr>
+		
+   	      	<tr>
+		  <td>11/18</td>
+		  <td>DS: Infinite HMM</td>
+		  <td>
+		    <i>The Infinite Hidden Markov Model</i><br/>
+		    <a href="http://papers.nips.cc/paper/1956-the-infinite-hidden-markov-model.pdf">Beal, M. et al. NeurIPS (2002)</a>
+		  </td>
+		  <td>
+		    Jason Pacheco<br/>
+		    <a href="lectures/ihmm_notes.pdf">(notes)</a>
+		  </td>
+		  <td>
+		    <i>Stochastic Variational Inference for Bayesian Time Series Models</i><br/>
+		    <a href="http://proceedings.mlr.press/v32/johnson14.pdf">Johnson, M. J. and Willsky, A. S. ICML (2014)</a>
+		  </td>
+		</tr>
+
+   	      	<tr>
+		  <td>11/20</td>
+		  <td>DS: HMM Topic Models</td>
+		  <td>
+		    <i>Integrating Topics and Syntax</i><br/>
+		    <a href="http://papers.nips.cc/paper/2587-integrating-topics-and-syntax.pdf">Griffiths, T. L. et al. NeurIPS (2005)</a>
+		  </td>
+		  <td>
+		    Marium Yousuf<br/>
+		    <a href="lectures/marium_contextLDA_griffiths.pdf">(slides)</a>
+		  </td>
+		  <td></td>
+		</tr>				
+
+		<tr>
+		  <td>11/25</td>
+		  <td>Bayesian Deep Learning: Variational Autoencoders</td>
+		  <td>
+		    <i>Auto-encoding Variational Bayes</i>
+		    <a href="papers/kingma_vae_14.pdf">Kingma, D. P. and Welling, M. ICLR, 2014</a>
+		  </td>
+		  <td>Marina Kisley</td>
+		  <td>
+		    <i>Tutorial on Variational Autoencoders</i><br/>
+		    <a href="papers/doersch_vaeTutorial16.pdf">Doersch, C. ArXiv, 2016</a><br/>
+		    <i>Stochastic Backpropagation and Approximate Inference in Deep Generative Models</i><br/>
+		    <a href="papers/rezende_vae14.pdf">Rezende, et al. ICML, 2014</a><br/>		    
+		  </td>
+		</tr>		
+
+   	      	<tr>
+		  <td>11/27</td>
+		  <td>BDL: Structured VAEs</td>
+		  <td>
+		    <i>Composing graphical models with neural networks for structured representations and fast inference</i><br/>
+		    <a href="papers/johnson_composingGMwithNNs16.pdf">Johnson, M. J., et al. NIPS, 2016</a>
+		  </td>
+		  <td>Jason Pacheco</td>
+		  <td></td>
+		</tr>
+
+		<tr>
+		  <td>12/02</td>
+		  <td>BDL: Dropout Sampling</td>
+		  <td>
+		    <i>Dropout as a Bayesian Approximation:Representing Model Uncertainty in Deep Learning</i><br/>
+		    <a href="papers/gal16.pdf">Gal, Y. and Ghahramani, Z. ICML, 2016</a>
+		  </td>
+		  <td>Loren Champlin</td>
+		  <td>
+		    <i>Dropout: A Simple Way to Prevent Neural Networks from Overfitting</i><br/>
+		    <a href="papers/srivastava14a.pdf">Srivastava, et al. JMLR, 2014</a><br/>
+		    <i>Variational Dropout and the Local Reparameterization Trick</i><br/>
+		    <a href="papers/kingma15.pdf">Kingma, et al. NIPS, 2015</a><br/>
+		    <i>Variational Dropout is not Bayesian</i><br/>
+		    <a href="papers/hron17.pdf">Hron, J. et al. ArXiv, 2017</a>
+		  </td>
+		</tr>
+		
+   	      	<tr>
+		  <td>12/04</td>
+		  <td>BDL: Deep Exponential Families</td>
+		  <td>
+		    <i>Deep Exponential Families</i><br/>
+		    <a href="http://proceedings.mlr.press/v38/ranganath15.pdf">Ranganath, R. et al. AISTATS (2015)</a>
+		  </td>
+		  <td>Jason Pacheco</td>
+		  <td></td>
+		</tr>
+
+		<tr>
+		  <td>12/04</td>
+		  <td>Course Wrap-Up / Future Directions</td>
+		  <td></td>
+		  <td>Lecture: Jason Pacheco</td>
+		  <td><b>Last Regular Class!</b></td>
+		</tr>		
+
+		<tr>
+		  <td>12/9</td>
+		  <td colspan="4"><b>Term Project Presentations (Group 1)</b></td>
+		</tr>
+		<tr>
+		  <td>12/11</td>
+		  <td ><b>Term Project Presentations (Group 2)</b></td>
+		  <td>
+		    <div class="alert alert-primary">
+		      <b>Final Project Reports Due</b>
+		    </div>
+		  </td>
+		  <td></td>
+		  <td></td>
+		</tr>						
+		
+
+		<!-- <tr> -->
+		<!--   <td></td> -->
+		<!--   <td>BN: Dirichlet Process</td> -->
+		<!--   <td></td> -->
+		<!--   <td></td> -->
+		<!--   <td></td> -->
+		<!-- </tr> -->
+		<!-- <tr> -->
+		<!--   <td></td> -->
+		<!--   <td>BN: VI for Dirichlet Processes</td> -->
+		<!--   <td></td> -->
+		<!--   <td></td> -->
+		<!--   <td></td> -->
+		<!-- </tr>		 -->
+		<!-- <tr> -->
+		<!--   <td></td> -->
+		<!--   <td>BN: Hierarchical Dirichlet Process</td> -->
+		<!--   <td></td> -->
+		<!--   <td></td> -->
+		<!--   <td></td> -->
+		<!-- </tr> -->		
+
+		<!-- <tr> -->
+		<!--   <td></td> -->
+		<!--   <td>BN: Gaussian Processes</td> -->
+		<!--   <td></td> -->
+		<!--   <td></td> -->
+		<!--   <td></td> -->
+		<!-- </tr> -->
+		<!-- <tr> -->
+		<!--   <td></td> -->
+		<!--   <td>Bayesian Optimization (BO)</td> -->
+		<!--   <td></td> -->
+		<!--   <td>Lecture: Jason Pacheco</td> -->
+		<!--   <td></td> -->
+		<!-- </tr>		 -->
+		<!-- <tr> -->
+		<!--   <td></td> -->
+		<!--   <td>BO: Hyperparameter Optimization</td> -->
+		<!--   <td></td> -->
+		<!--   <td></td> -->
+		<!--   <td></td> -->
+		<!-- </tr> -->
+		<!-- <tr> -->
+		<!--   <td></td> -->
+		<!--   <td>BO: Constrained Optimization</td> -->
+		<!--   <td></td> -->
+		<!--   <td></td> -->
+		<!--   <td></td> -->
+		<!-- </tr> -->
+		<!-- <tr> -->
+		<!--   <td></td> -->
+		<!--   <td>Bayesian Deep Learning (DBL): Variational Autoencoders</td> -->
+		<!--   <td> -->
+		<!--     <i>Auto-encoding Variational Bayes</i> -->
+		<!--     <a href="papers/kingma_vae_14.pdf">Kingma, D. P. and Welling, M. ICLR, 2014</a> -->
+		<!--   </td> -->
+		<!--   <td></td> -->
+		<!--   <td> -->
+		<!--     <i>Tutorial on Variational Autoencoders</i><br/> -->
+		<!--     <a href="papers/doersch_vaeTutorial16.pdf">Doersch, C. ArXiv, 2016</a><br/> -->
+		<!--     <i>Stochastic Backpropagation and Approximate Inference in Deep Generative Models</i><br/> -->
+		<!--     <a href="papers/rezende_vae14.pdf">Rezende, et al. ICML, 2014</a><br/> -->
+		<!--     <i>Composing graphical models with neural networks for structured representations and fast inference</i><br/> -->
+		<!--     <a href="papers/johnson_composingGMwithNNs16.pdf">Johnson, M. J., et al. NIPS, 2016</a> -->
+		<!--   </td> -->
+		<!-- </tr> -->
+		<!-- <tr> -->
+		<!--   <td></td> -->
+		<!--   <td>BDL: Dropout Sampling</td> -->
+		<!--   <td> -->
+		<!--     <i>Dropout as a Bayesian Approximation:Representing Model Uncertainty in Deep Learning</i><br/> -->
+		<!--     <a href="papers/gal16.pdf">Gal, Y. and Ghahramani, Z. ICML, 2016</a> -->
+		<!--   </td> -->
+		<!--   <td>Loren Champlin</td> -->
+		<!--   <td> -->
+		<!--     <i>Dropout: A Simple Way to Prevent Neural Networks from Overfitting</i><br/> -->
+		<!--     <a href="papers/srivastava14a.pdf">Srivastava, et al. JMLR, 2014</a><br/> -->
+		<!--     <i>Variational Dropout and the Local Reparameterization Trick</i><br/> -->
+		<!--     <a href="papers/kingma15.pdf">Kingma, et al. NIPS, 2015</a><br/> -->
+		<!--     <i>Variational Dropout is not Bayesian</i><br/> -->
+		<!--     <a href="papers/hron17.pdf">Hron, J. et al. ArXiv, 2017</a> -->
+		<!--   </td> -->
+		<!-- </tr> -->
+
+	      </tbody>
+	    </table>
+	  </div>
+	</div>
+      </div>
+      <!-- /Main -->
+
+</div>
+<!-- /container -->
+
+<div class="container">
+  <hr>
+  <div class="row justify-content-end">
+    <div class="col-md" align="right">      
+      &copy; Jason Pacheco, 2019
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

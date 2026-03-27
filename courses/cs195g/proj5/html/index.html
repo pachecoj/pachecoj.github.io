@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Project 5: Face Morphing (Writeup)</title>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript"
+    src="flowplayer-3.1.4.min.js"></script>
+
+
+</head>
+
+<style type=text/css media=all>
+#primarycontent {
+    margin-left: auto;  
+    width: expression(document.body.clientWidth > 995? "995px": "auto" );
+    margin-right: auto;
+    text-align: left;
+    max-width: 995px 
+}
+
+/* styling of the container. */
+a.myPlayer {
+	display:block;
+	text-align:center;
+	margin:0 15px 15px 0;
+	float:left;
+	border:1px solid #999;
+}
+
+/* play button */
+a.myPlayer img {
+	margin-top:70px;
+	border:0px;
+}
+
+/* when container is hovered we alter the border color */
+a.myPlayer:hover {
+	border:1px solid #000;
+}
+
+
+
+</style>
+
+<body>
+
+<div id=primarycontent>
+<h1 align="center"> Project 5: Face Morphing (Writeup) </h1>
+<h2 align="center">Jason Pacheco (pachecoj)</h2>
+<h3 align="center">March 26, 2010</h3><br/>
+
+<h2 align="center">View <a href="../code/">Code</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View <a href="../data/">Data</a></h2>
+
+
+<h2>Algorithm Description</h2>
+
+<table style="float: right;">
+<tr><td align="center">
+<!-- player #1 -->
+<a  class="myPlayer"
+   href="http://cs.brown.edu/~pachecoj/movie.flv"  
+   style="display:block;width:340px;height:530px;background-image:url(movie_splash.jpg)"> 
+   <img src="play_large.png" alt="Demo Video 1" />
+</a>
+</td></tr>
+</table>
+
+<p>
+  The video to the right shows the results of the algorithm on the
+  input set of faces.  The algorithm computes 21 frames for each pair
+  of images and performs morphing and blending with equal coefficients
+  in the range [0,1] with increments of 1/21.  I found that 18
+  correspondence points worked well enough.  
+</p>
+
+<h2>Results</h2>
+
+<p>
+  The results are shown in the video to the right.  Below are the mean
+  and median faces of the data set.  Out of curiosity I computed the
+  median face for comparison.  There are some interesting comparisons,
+  most notably you can clearly see glasses on the mean face, while
+  there are none on the median.  While both of them look predominantly
+  male the median face looks much more plausibly male, furthermore the
+  hair looks much more coherently like a short buzz cut on the median
+  face.  Finally, we see that smiling is aparently an outlier, since
+  mean guy looks happier than median guy.
+</p>
+
+<table align="center" >
+  <tr>
+    <td align="center"><b>Mean Guy</b></td>
+    <td align="center"><b>Median Guy</b></td> 
+  </tr>
+  <tr>
+    <td align="center"><img src="mean_guy.jpg" style="height: 350px" /></td>
+    <td align="center"><img src="median_guy.jpg" style="height: 350px" /></td>
+  </tr>
+</table>
+
+<h2>Graduate Credit</h2>
+
+<h3>Non-Face Input</h3>
+
+<p>
+  For graduate credit I computed morphs on images of cars.  I chose
+  correspondence points as demonstrated in the image below.  The
+  following video shows the resulting output of the algorithm.
+</p>
+
+<table align="center" >
+  <tr>
+    <td><img src="points.jpg" /></td>
+    <td>
+<!-- player #2 -->
+<a class="myPlayer"
+   href="http://cs.brown.edu/~pachecoj/cars_movie.flv"  
+   style="display:block;width:500px;height:375px;background-image:url(cars_movie_splash.jpg)"> 
+   <img src="play_large.png" alt="Demo Video 2" />
+</a>
+<script>
+  flowplayer("player", "./flowplayer2-3.1.5.swf");
+</script>
+    </td>
+  </tr>
+</table>
+
+<h3>Funny Faces</h3>
+
+<p>
+  I also synthesized some faces using the median face shown above.  I
+  did this by simply by choosing new locations for the correspondence
+  points of the mean face and computing a morph which morphs the mean
+  face into one with the new correspondence point locations.
+</p>
+
+<table align="center">
+  <tr>
+    <td><a href="fig3.png"><img src="fig3.png" width="300" /></a></td>
+    <td><a href="fig4.png"><img src="fig4.png" width="300" /></a></td>
+    <td><a href="fig5.png"><img src="fig5.png" width="300" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="fig6.png"><img src="fig6.png" width="300" /></a></td>
+    <td><a href="fig7.png"><img src="fig7.png" width="300" /></a></td>
+    <td><a href="fig8.png"><img src="fig8.png" width="300" /></a></td>
+  </tr>
+</table>
+
+
+
+<script>	
+
+// a- tags with class "myPlayer" are transformed into video players
+flowplayer("a.myPlayer", "http://releases.flowplayer.org/swf/flowplayer-3.2.4.swf", {
+		
+	// this is the player configuration. You'll learn on upcoming demos.
+	plugins:  {
+		controls:  {
+			volume: false		
+		}
+	}
+});
+</script>
+
+
+</div>
+</body>
+</html>
+
+

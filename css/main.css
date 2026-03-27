@@ -1,0 +1,17 @@
+body {
+    font-family: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
+}
+
+.navbar{
+    padding: 3px;
+}
+
+.nav-item{
+    font-size: 1.1rem;
+    line-height: 0.75;
+/*    font-weight: bold; */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.75);
+}

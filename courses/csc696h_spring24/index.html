@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Probabilistic Methods in Machine Learning</title>
+    <meta name="author" content="Jason Pacheco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="/theme/html5.js"></script>
+	<![endif]-->
+    <link href="./css/ipython.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.1.3/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/pygments.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <div class="container">
+
+      <!-- Navigation -->
+      <nav class="nav nav-pills justify-content-end">
+	<a class="nav-item nav-link active" href="#">Home</a>
+	<a class="nav-item nav-link" href="https://d2l.arizona.edu/d2l/home/1415589" target="_blank" rel="noopener noreferrer">D2L</a>
+	<a class="nav-item nav-link" href="https://piazza.com/arizona/spring2024/csc696h1" target="_blank" rel="noopener noreferrer">Piazza</a>
+	<a class="nav-item nav-link" href="csc696h_spring24_syllabus.pdf" target="_blank" rel="noopener noreferrer">Syllabus</a>
+	<a class="nav-item nav-link" href="#schedule" target="_blank" rel="noopener noreferrer">Schedule</a>
+	<!-- <a class="nav-item nav-link" href="resources.html">Resources</a> -->
+      </nav>
+      <hr>
+      
+      <!-- Header -->
+      <div class="page-header">
+	<h1>
+	  <a href="#"><b>Probabilistic Methods in Machine Learning</b></a><br/>
+	  <small class="text-muted">CSC 696H | Spring 2024 | MW 2:00 - 3:15 PM | Gould-Simpson 701</small>
+	</h1>
+      </div>
+      <!-- /Header -->
+      
+      <!-- Main -->
+      <div class="row justify-content-center">	
+	<div class="col-md-9">
+	  <!-- <center><img src="img/msg_pass.png" width="300" align="center"></center><br/> -->
+	  <h2>Description of Course</h2>
+	  <p>
+	    The aim of this course is to explore advanced techniques
+	    in probabilistic graphical models (PGMs)and statistical
+	    machine learning (ML) more broadly. Students will develop
+	    the ability to applythese techniques to their own
+	    research. Students will learn to perform statistical
+	    inference andreasoning in complex probabilistic
+	    statistical models. The course will survey
+	    state-of-the-art MLresearch including: variational
+	    inference, Bayesian Deep Learning, representation
+	    learning, anduncertainty quantification. Upon conclusion
+	    of this course students will be capable of developingnew
+	    methods and advancing the state-of-the-art in ML and PGM
+	    research.
+	  </p>
+
+	  <div class="alert alert-primary" role="alert">
+	    Registration is restricted to CS students exclusively
+	    during the enrollment period.  Any <b>non-CS students</b>
+	    wishing to enroll in this course
+	    should <a href="mailto:pachecoj@cs.arizona.edu">email
+	    me</a> and
+	    CC <a href="martinmarquez@cs.arizona.edu">Martin
+	    Marquez</a>.  Space is limited so I will prioritize
+	    enrollment in the order of emails I receive.
+	  </div>
+
+	  <!--
+	  <h4>Primary Resources</h4>
+	  Multiple readings will be chosen from the texts below.  I
+	  have listed the references and will refer to them by acronym
+	  in the schedule.  
+	  <ul class="list-group list-group-flush">
+
+	    <li class="list-group-item">
+	      <b><a href="https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf" target="_blank" rel="noopener noreferrer">PRML</a> :</b> Bishop, C. "Pattern Recognition and Machine Learning." Springer, 2006
+	    </li>
+
+	    <li class="list-group-item">
+	      <b><a href="https://www.nowpublishers.com/article/DownloadSummary/MAL-001" target="_blank" rel="noopener noreferrer">WJ</a> :</b> Wainwright, M. J., and Jordan, M. I. "Graphical models, exponential families, and variational inference." Foundations and Trends in Machine Learning, 2008
+	    </li>
+	    
+	  </ul><br/>
+	  -->
+
+
+	  <h2>Course Management</h2>
+	  <p>
+	    <b>D2L:</b> <a href="https://d2l.arizona.edu/d2l/home/1415589"target="_blank" rel="noopener noreferrer">https://d2l.arizona.edu/d2l/home/1205997</a><br/>
+	    <b>Piazza:</b> <a href="https://piazza.com/arizona/spring2024/csc696h1"target="_blank" rel="noopener noreferrer">https://piazza.com/arizona/fall2022/csc696h1</a><br/>
+	  </p>	  
+
+	  <h2>Instructor and Contact Information:</h2>
+	  <p>
+	    <b>Instructor:</b> Jason Pacheco, GS 724, Email: <a href="mailto:pachecoj@cs.arizona.edu">pachecoj@cs.arizona.edu</a></br>
+	    <b>Office Hours:</b> Mondays 3:30-4:30pm, Fridays (Zoom) 3:30-4:30pm</br>
+	    <b>Instructor Homepage:</b> <a href="http://www.pachecoj.com">http://www.pachecoj.com</a></br>
+	  </p>
+
+
+	</div>
+      </div>
+      <!-- /Main -->
+
+      <!-- Header -->
+      <div class="page-header">
+	<h1>
+	  <a name="schedule"><b>Schedule</b></a>
+      </div>
+      <!-- /Header -->
+
+
+      <!-- Main -->
+      <div class="row justify-content-center">	
+	<div class="col">
+	  <div class="table-responsive-md">
+	    <table class="table table-striped">
+	      <thead>
+		<tr>
+		  <th scope="col">Date</th>
+		  <th scope="col">Topic</th>
+		  <th scope="col">Readings</th>
+		  <th scope="col">Presenter / Slides</th>
+		</tr>
+	      </thead>
+	      <tbody>
+
+		<!-- Lecture -->
+		<tr>
+		  <td>1/10</td>
+		  <td>
+		    Introduction + Course Overview
+		  </td>
+		  <td>		    		    
+		  </td>
+		  <td>
+		    <a href="lectures/intro.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>1/15</td>
+		  <td>
+		    <b>Martin Luther King Jr Day : No Classes</b>
+		  </td>
+		  <td>		    		    
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>1/17</td>
+		  <td>
+		    Probability and Statistics : Probability Theory
+		  </td>
+		  <td>
+	    	    <b><a href="https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf" target="_blank" rel="noopener noreferrer">PRML</a></b>
+		    : Sec. 1.2.1-1.2.4<br/><br/>		    
+		  </td>
+		  <td>
+		    <a href="lectures/probability.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>1/22</td>
+		  <td>
+		    Probability and Statistics : Bayesian Statistics
+		  </td>
+		  <td>
+		    <i>Why Isn't Everyone a Bayesian?</i><br/>
+		    <a href="http://www2.stat.duke.edu/courses/Spring09/sta122/Readings/EfronWhyEveryone.pdf">Efron, B. 1986</a><br/>
+		    <i>Objections to Bayesian Statistics</i><br/>
+		    <a href="https://projecteuclid.org/journals/bayesian-analysis/volume-3/issue-3/Objections-to-Bayesian-statistics/10.1214/08-BA318.pdf" target="_blank" rel="noopener noreferrer">Gelman,
+		      A. 2008</a><br/><br/>		    
+		  </td>
+		  <td>
+		     <a href="lectures/probability.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>1/24</td>
+		  <td>
+		    Probability and Statistics : Bayesian Statistics (Cont'd)
+		  </td>
+		  <td>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>1/29</td>
+		  <td>
+		    Inference : Monte Carlo Methods
+		  </td>
+		  <td>
+		    <i>Introduction to Monte Carlo Methods</i><br/>
+		    <a href="http://www.inference.org.uk/mackay/erice.pdf" target="_blank" rel="noopener noreferrer">MacKay, D. J. C . Learning in Graphical Models. Springer, 1998</a>		  
+		  </td>
+		  <td>
+		    <a href="lectures/montecarlo.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>1/31</td>
+		  <td>
+		    Inference : Monte Carlo Methods (Cont'd)
+		  </td>
+		  <td>		    
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>2/5</td>
+		  <td>
+		    Inference : Variational Inference
+		    <!-- Inference: Implicit Likelihood Models -->
+		  </td>
+		  <td>
+		    <i>Variational Inference: A Review for Statisticians</i><br/>
+		    <a href="https://arxiv.org/pdf/1601.00670.pdf" target="_blank" rel="noopener noreferrer">Blei,
+		      D., et al., J. Am. Stat. Assoc. 2017</a><br/><br/>
+		    
+		    <b>Optional:</b><br/>		    
+		    <b><a href="https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf" target="_blank" rel="noopener noreferrer">PRML</a></b>
+		    : Sec. 10.1-10.4
+		    
+		    <!--
+		    <i>Markov chain Monte Carlo Without Likelihoods</i><br/>
+		    <a href="https://www.pnas.org/doi/full/10.1073/pnas.0306899100" target="_blank" rel="noopener noreferrer">Marjoram, P. et al. PNAS, 2003</a>
+		    -->
+		  </td>
+		  <td>
+		    <a href="lectures/variational.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>2/7</td>
+		  <td>
+		    Inference: Approximate Bayesian Computation		    
+		  </td>
+		  <td>
+		    <i>Approximate Bayesian Computation (ABC)</i><br/>
+		    <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002803" target="_blank" rel="noopener noreferrer">Sunnaker, M. et al. PLoS Computational Biology, 2013</a>
+		  </td>
+		  <td>
+		    James<br/>
+		    <a href="lectures/james_abc.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>2/12</td>
+		  <td>
+		    Inference: Bayesian Conditional Density Estimation
+		  </td>
+		  <td>
+		    <!--
+		    <i>Sequential Neural Likelihood: Fast Likelihood-Free Inference with Autoregressive Flows</i><br/>
+		    <a href="http://proceedings.mlr.press/v89/papamakarios19a/papamakarios19a.pdf" target="_blank" rel="noopener noreferrer">Papamakarios, G. et al. AISTATS, 2019</a>
+		    -->
+		    <i>Fast &epsilon;-free Inference of Simulation Models with Bayesian Conditional Density Estimation</i><br/>
+		    <a href="https://proceedings.neurips.cc/paper_files/paper/2016/file/6aca97005c68f1206823815f66102863-Paper.pdf" target="_blank" rel="noopener noreferrer">Papamakarios, G. and Murray, I. NeurIPS, 2016</a>
+		  </td>
+		  <td>
+		    Varun<br/>
+		    <a href="lectures/varun_efreeinf.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>2/14</td>
+		  <td>
+		    Bayesian Deep Learning: Introduction
+		  </td>
+		  <td>
+		    <!--
+		    <i>Hands-on Bayesian Neural Networks – A Tutorial
+for Deep Learning Users</i>
+		    <a href="https://arxiv.org/pdf/2007.06823.pdf" target="_blank" rel="noopener noreferrer">Jospin et al. ArXiv, 2022</a><br/><br/>
+		    -->
+		    <i>Weight Uncertainty in Neural Networks</i><br/>
+		    <a href="http://proceedings.mlr.press/v37/blundell15.pdf" target="_blank" rel="noopener noreferrer">Blundel, C. et al. ICML, 2015</a>
+		  </td>
+		  <td>
+		    Cameron<br/>
+		    <a href="lectures/cameron_bnn.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>2/19</td>
+		  <td>
+		    Bayesian Deep Learning: Monte Carlo Dropout
+		  </td>
+		  <td>
+		    <i>Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning</i><br/>
+		    <a href="http://proceedings.mlr.press/v48/gal16.pdf" target="_blank" rel="noopener noreferrer">Gal, Y. and Ghahramani, Z. ICML, 2016</a>
+		  </td>
+		  <td>
+		    Miki<br/>
+		    <a href="lectures/miki_mcdropout.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>2/21</td>
+		  <td>
+		    Bayesian Deep Learning: Variational Dropout
+		  </td>
+		  <td>
+		    <i>Variational Dropout and the Local Reparameterization Trick</i><br/>
+		    <a href="https://proceedings.neurips.cc/paper/2015/file/bc7316929fe1545bf0b98d114ee3ecb8-Paper.pdf" target="_blank" rel="noopener noreferrer">Kingma, D. P. et al. NeurIPS, 2015</a>
+		  </td>
+		  <td>
+		    Brenda<br/>
+		    <a href="lectures/brenda_vardropout.pdf" target="_blank" rel="noopener noreferrer">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>2/26</td>
+		  <td>
+		    Bayesian Deep Learning: Information Bottleneck
+		  </td>
+		  <td>
+		    <i>Deep Variational Information Bottleneck</i><br/>
+		    <a href="https://arxiv.org/pdf/1612.00410.pdf" target="_blank" rel="noopener noreferrer">Alemi, A. A. et al. ICLR, 2016</a>
+		  </td>
+		  <td>
+		    <a target="_blank" href="lectures/projects.pdf">Projects Info</a><br/>
+		    Kayla<br/>
+		    <a target="_blank" href="lectures/kayla_deepvib.pdf">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>2/28</td>
+		  <td>
+		    Bayesian Deep Learning: Representation Learning
+		  </td>
+		  <td>
+		    <i>InfoGAN: Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets</i><br/>
+		    <a href="https://proceedings.neurips.cc/paper_files/paper/2016/file/7c9d0b1f96aebd7b5eca8c3edaa19ebb-Paper.pdf" target="_blank" rel="noopener noreferrer">Chen, X. et al. NeurIPS 2016</a>
+		  </td>
+		  <td>
+		    Daniel<br/>
+		    <a target="_blank" href="lectures/daniel_infogan.pdf">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>3/4</td>
+		  <td>
+		    <b>Spring Recess : No Classes</b>
+		  </td>
+		  <td>		    		    
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>3/6</td>
+		  <td>
+		    <b>Spring Recess : No Classes</b>
+		  </td>
+		  <td>		    		    
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>3/11</td>
+		  <td>
+		    Bayesian Deep Learning : Representation Learning
+		  </td>
+		  <td>
+		    <i>Information Dropout: Learning Optimal Representations Through Noisy Computation</i><br/>
+		    <a href="http://www.vision.jhu.edu/teaching/learning/deeplearning18/assets/Achille_Soatto-18.pdf" target="_blank" rel="noopener noreferrer">Achille, A. and Soatto, S. PAMI, 2018</a>
+		  </td>
+		  <td>
+		    Thang<br/>
+		    <a target="_blank" href="lectures/thang_infodropout.pdf">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>3/13</td>
+		  <td>
+		    Generative Models : Variational Autoencoder
+		  </td>
+		  <td>
+		    <i>Auto-encoding Variational Bayes</i><br/>
+		    <a target="_blank" href="https://arxiv.org/pdf/1312.6114.pdf">Kingma and Welling, ArXiv, 2014</a>
+		    <br/><br/>
+		    <b>Optional Reference:</b><br/>
+		    <a href="https://arxiv.org/abs/1906.02691" target="_blank" rel="noopener noreferrer">Kingma, D. P. and Welling, M. ArXiv, 2019</a>
+		  </td>
+		  <td>
+		    Natnael<br/>
+		    <a target="_blank" href="lectures/nate_vae.pdf">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>3/18</td>
+		  <td>
+		    Generative Models : Diffusion Probabilistic Models
+		  </td>
+		  <td>
+		    <i>Denoising Diffusion Probabilistic Models</i><br/>
+	    	    <a target="_blank" rel="noopener noreferrer" href="https://proceedings.neurips.cc/paper/2020/file/4c5bcfec8584af0d967f1ab10179ca4b-Paper.pdf">Ho et al., NeurIPS, 2020</a>
+		  </td>
+		  <td>
+		    Varun<br/>
+		    <a href="lectures/varun_ddpms.pdf" target="_blank">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>3/20</td>
+		  <td>
+		    Generative Models : Diffusion Implicit Models		    
+		  </td>
+		  <td>
+		    <i>Denoising Diffusion Implicit Models</i><br/>
+		    <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/2010.02502.pdf?trk=cndc-detail">Song et al., ICLR, 2021</a>
+		  </td>
+		  <td>
+		    Kayla<br/>
+		    <a href="lectures/kayla_ddims.pdf" target="_blank">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>3/25</td>
+		  <td>
+		    Generative Models : Score-Based Generative Modeling
+		  </td>
+		  <td>
+		    <i>Score-Based Generative Modeling Through Stochastic Differential Equations</i><br/><br/>
+		    <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/2011.13456.pdf">Song et al., ICLR, 2021</a>
+		  </td>
+		  <td>
+		    Natnael<br/>
+		    <a href="lectures/nate_scoremodels.pdf" target="_blank">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>3/27</td>
+		  <td>
+		    Generative Models : Energy-Based Models
+		  </td>
+		  <td>
+  		    <i>Implicit Generation Modeling with Energy-Based Models</i><br/>
+		    <a target="_blank" rel="noopener noreferrer" href="https://proceedings.neurips.cc/paper/2019/file/378a063b8fdb1db941e34f4bde584c7d-Paper.pdf">Du and Mordatch, NeurIPS, 2019</a>
+		  </td>
+		  <td>
+		    Brenda<br/>
+		    <a href="lectures/brenda_implicitgen.pdf" target="_blank">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>4/1</td>
+		  <td>
+		    Generative Models : Energy-Based Models
+		  </td>
+		  <td>
+   		    <i>How to Train Your Energy-Based Models</i><br/>
+		    <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/2101.03288.pdf">Song and Kingma, ArXiv, 2021</a>
+		  </td>
+		  <td>
+		    Daniel<br/>
+		    <a target="_blank" href="lectures/daniel_ebm.pdf">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>4/3</td>
+		  <td>
+		    Uncertainty Quantification : Variational BOED
+		  </td>
+		  <td>
+		    <i>Variational Bayesian Optimal Experimental Design</i><br/>
+		    <a target="_blank" href="https://proceedings.neurips.cc/paper_files/paper/2019/file/d55cbf210f175f4a37916eafe6c04f0d-Paper.pdf">Foster et al., NeurIPS, 2019</a>
+		  </td>
+		  <td>
+		    Miki<br/>
+		    <a target="_blank" href="lectures/miki_vboed.pdf">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>4/8</td>
+		  <td>
+		    Uncertainty Quantification : Variational MI Bounds
+		  </td>
+		  <td>
+		    <i>On Variational Bounds of Mutual Information</i><br/>
+		    <a target="_blank" href="http://proceedings.mlr.press/v97/poole19a/poole19a.pdf">Poole et al., ICML, 2019</a>
+		  </td>
+		  <td>
+		    Alonso<br/>
+		    <a target="_blank" href="lectures/alonso_varmi.pdf">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>4/10</td>
+		  <td>
+		    Uncertainty Quantification : MINE
+		  </td>
+		  <td>
+		    <i>Mutual Information Neural Estimation</i><br/>
+		    <a target="_blank" href="http://proceedings.mlr.press/v80/belghazi18a/belghazi18a.pdf">Belghazi et al., ICML, 2018</a>
+		  </td>
+		  <td>
+		    Cameron<br/>
+		    <a target="_blank" href="lectures/cameron_mine.pdf">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>4/15</td>
+		  <td>
+		    Uncertainty Quantification : DAD
+		  </td>
+		  <td>
+		    <i>Deep Adaptive Design: Amortizing Sequential BOED</i><br/>
+		    <a target="_blank" href="http://proceedings.mlr.press/v139/foster21a/foster21a.pdf">Foster et al., ICML, 2021</a>
+		  </td>
+		  <td>
+		    James<br/>
+		    <a target="_blank" href="lectures/james_dad.pdf">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>4/17</td>
+		  <td>
+		    Uncertainty Quantification : Contrastive Predictive Coding
+		  </td>
+		  <td>
+	    	    <i>Representation Learning with Contrastive Predictive Coding</i><br/>
+		    <a target="_blank" href="https://arxiv.org/pdf/1807.03748.pdf">van den Oord et al., arXiv, 2018</a>
+		  </td>
+		  <td>
+		    Thang<br/>
+		    <a target="_blank" href="lectures/thang_cpc.pdf">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>4/22</td>
+		  <td>
+		   Uncertainty Quantification : Bayesian Experimental Design
+		  </td>
+		  <td>
+		     <i>Modern Bayesian Experimental Design</i><br/>
+		    <a target="_blank" href="https://projecteuclid.org/journals/statistical-science/volume-39/issue-1/Modern-Bayesian-Experimental-Design/10.1214/23-STS915.full">Rainforth et al., Statistical Science, 2024</a>
+		  </td>
+		  <td>
+		    Alonso<br/>
+		    <a target="_blank" href="lectures/alonso_boed.pdf">(slides)</a>
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>4/24</td>
+		  <td>
+		    Project Presentations
+		  </td>
+		  <td>		    		    
+		  </td>
+		  <td>
+		    Alonso, Daniel, Thang
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>4/29</td>
+		  <td>
+		    Project Presentations
+		  </td>
+		  <td>		    		    
+		  </td>
+		  <td>
+		    James, Cameron, Nate
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+
+		<!-- Lecture -->
+		<tr>
+		  <td>5/1</td>
+		  <td>
+		    Project Presentations
+		  </td>
+		  <td>		    		    
+		  </td>
+		  <td>
+		    Kayla, Brenda, Varun
+		  </td>
+		</tr>
+		<!-- /Lecture -->
+				
+		
+	      </tbody>
+	    </table>
+	  </div>
+	</div>
+      </div>
+      
+
+</div>
+<!-- /container -->
+
+<div class="container">
+  <hr>
+  <div class="row justify-content-end">
+    <div class="col-md" align="right">      
+      &copy; Jason Pacheco, 2022
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
